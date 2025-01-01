@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
+import Box from '@mui/material/Box';
 import Home from './pages/Home';
 import Gallery from './pages/Gallery';
 import About from './pages/About';
@@ -10,11 +11,13 @@ import BathroomRenovations from './pages/BathroomRenovations';
 import BasementRenovations from './pages/BasementRenovations';
 import Flooring from './pages/Flooring';
 import Painting from './pages/Painting';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <Router>
       <Header />
+      <Box sx={{ paddingTop: '150px' }}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/gallery" element={<Gallery />} />
@@ -26,6 +29,8 @@ function App() {
         <Route path="/services/flooring" element={<Flooring />} />
         <Route path="/services/painting" element={<Painting />} />
       </Routes>
+      </Box>
+      <Footer />
     </Router>
   );
 }
