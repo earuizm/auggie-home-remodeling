@@ -26,7 +26,7 @@ const About = () => {
             fontFamily: "'Georgia', serif",
           }}
         >
-          Auggie's Home Remodeling is a family-owned business that has been proudly serving the Chicago area for over 25 years. We specialize in turning your house into a home, with a focus on bathroom and kitchen remodeling, home additions, and more. Our team’s mission is simple – to deliver exceptional quality, unparalleled service, and a personal touch that makes all the difference.
+          Auggie's Home Remodeling is a family-owned business that has been proudly serving the Chicago area for over 25 years. We specialize in turning your house into a home, with a focus on bathroom and kitchen remodeling, and more. Our team’s mission is simple – to deliver exceptional quality, unparalleled service, and a personal touch that makes all the difference.
         </Typography>
       </Box>
 

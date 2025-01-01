@@ -3,7 +3,7 @@ import { Box, Typography, Fade } from '@mui/material';
 import { CheckCircle } from '@mui/icons-material'; // Check icon for features
 
 const BathroomRenovations = () => {
-  const images = ['/bathroom1.jpg', '/bathroom2.jpg', '/bathroom3.jpg', './bathroom4.jpg']; // images for the carousel
+  const images = ['/bathroom1.jpg', '/bathroom2.jpg', '/bathroom3.jpg', '/bathroom4.jpg']; // images for the carousel
   const [currentImage, setCurrentImage] = useState(0);
 
   // Function to change image every 3 seconds
