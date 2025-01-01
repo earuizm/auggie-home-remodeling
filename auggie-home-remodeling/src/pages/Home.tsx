@@ -4,6 +4,16 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle'; // Import CheckCi
 
 const Home = () => {
   const [mobile, setMobile] = useState(window.innerWidth <= 500);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: '',
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [successMessage, setSuccessMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+  const [formErrors, setFormErrors] = useState<any>({});
 
   const handleWindowSizeChange = () => {
     setMobile(window.innerWidth <= 500);
@@ -16,10 +26,52 @@ const Home = () => {
     };
   }, []);
 
-    // Scroll to top whenever this component is rendered
-    useEffect(() => {
-      window.scrollTo(0, 0);
-    }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to top whenever the component is rendered
+  }, []);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const validateForm = () => {
+    const errors: any = {};
+    if (!formData.name) errors.name = 'Name is required.';
+    if (!formData.email) errors.email = 'Email is required.';
+    if (!formData.phone) errors.phone = 'Phone number is required.';
+    else if (!/^\d{10}$/.test(formData.phone)) errors.phone = 'Phone number must be 10 digits.';
+    if (!formData.message) errors.message = 'Message is required.';
+    return errors;
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setFormErrors({});
+
+    const errors = validateForm();
+    if (Object.keys(errors).length > 0) {
+      setFormErrors(errors);
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    // Simulate form submission
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setSuccessMessage('Thank you for your inquiry! We will get back to you soon.');
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        message: '',
+      });
+    }, 2000);
+  };
 
   return (
     <>
@@ -69,10 +121,53 @@ const Home = () => {
                 boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', // Shadow for the form
               }}>
                 <Typography variant="h6" sx={{ fontWeight: 'bold' }}>Schedule a Consultation</Typography>
-                <TextField label="Name" fullWidth margin="normal" />
-                <TextField label="Email" fullWidth margin="normal" />
-                <TextField label="Message" fullWidth multiline rows={4} margin="normal" />
-                <Button variant="contained" fullWidth sx={{ marginTop: '10px' }}>Submit</Button>
+                <TextField
+                  label="Name"
+                  fullWidth
+                  margin="normal"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  error={Boolean(formErrors.name)}
+                  helperText={formErrors.name}
+                />
+                <TextField
+                  label="Email"
+                  fullWidth
+                  margin="normal"
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  error={Boolean(formErrors.email)}
+                  helperText={formErrors.email}
+                />
+                <TextField
+                  label="Phone"
+                  fullWidth
+                  margin="normal"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  error={Boolean(formErrors.phone)}
+                  helperText={formErrors.phone}
+                />
+                <TextField
+                  label="Message"
+                  fullWidth
+                  multiline
+                  rows={4}
+                  margin="normal"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  error={Boolean(formErrors.message)}
+                  helperText={formErrors.message}
+                />
+                <Button variant="contained" fullWidth sx={{ marginTop: '10px' }} onClick={handleSubmit} disabled={isSubmitting}>
+                  {isSubmitting ? 'Submitting...' : 'Submit'}
+                </Button>
+                {successMessage && <Typography color="success" sx={{ marginTop: '10px' }}>{successMessage}</Typography>}
               </Box>
             )}
           </Box>
@@ -179,25 +274,69 @@ const Home = () => {
 
         {/* Mobile Form at the Bottom */}
         {mobile && (
-          <Box
-            sx={{
-              position: 'relative',
-              backgroundColor: 'rgba(255, 255, 255, 0.8)',
-              padding: '20px',
-              borderRadius: '8px',
-              zIndex: 1,
-              marginTop: 'auto', // Push it to the bottom
-              border: '2px solid #ddd', // Border around the form
-              boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', // Shadow for the form
-            }}
-          >
-            <Typography variant="h6" sx={{ fontWeight: 'bold' }}>Schedule a Consultation</Typography>
-            <TextField label="Name" fullWidth margin="normal" />
-            <TextField label="Email" fullWidth margin="normal" />
-            <TextField label="Message" fullWidth multiline rows={4} margin="normal" />
-            <Button variant="contained" fullWidth sx={{ marginTop: '10px' }}>Submit</Button>
-          </Box>
-        )}
+            <Box
+              sx={{
+                position: 'relative',
+                backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                padding: '20px',
+                borderRadius: '8px',
+                zIndex: 1,
+                marginTop: 'auto', // Push it to the bottom
+                border: '2px solid #ddd', // Border around the form
+                boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', // Shadow for the form
+              }}
+            >
+              <Typography variant="h6" sx={{ fontWeight: 'bold' }}>Schedule a Consultation</Typography>
+              <TextField
+                label="Name"
+                fullWidth
+                margin="normal"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                error={Boolean(formErrors.name)}
+                helperText={formErrors.name}
+              />
+              <TextField
+                label="Email"
+                fullWidth
+                margin="normal"
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                error={Boolean(formErrors.email)}
+                helperText={formErrors.email}
+              />
+              <TextField
+                label="Phone"
+                fullWidth
+                margin="normal"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                error={Boolean(formErrors.phone)}
+                helperText={formErrors.phone}
+              />
+              <TextField
+                label="Message"
+                fullWidth
+                multiline
+                rows={4}
+                margin="normal"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                error={Boolean(formErrors.message)}
+                helperText={formErrors.message}
+              />
+              <Button variant="contained" fullWidth sx={{ marginTop: '10px' }} onClick={handleSubmit} disabled={isSubmitting}>
+                {isSubmitting ? 'Submitting...' : 'Submit'}
+              </Button>
+              {successMessage && <Typography color="success" sx={{ marginTop: '10px' }}>{successMessage}</Typography>}
+            </Box>
+          )}
+
       </Box>
     </>
   );
