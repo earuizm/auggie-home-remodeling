@@ -1,33 +1,95 @@
+// Footer.tsx
 import React from 'react';
+import { Box, Typography, Link } from '@mui/material';
+import { Facebook, Instagram } from '@mui/icons-material'; // Import social media icons
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white py-8">
-      <div className="container mx-auto px-4 text-center">
-        <div className="mb-4">
-          <h2 className="text-2xl font-bold">Auggie’s Home Remodeling</h2>
-          <p className="text-gray-400">Building spaces you'll love to live in.</p>
-        </div>
-        <div className="flex justify-center space-x-6 mb-4">
-          <a href="#" className="hover:text-yellow-500" aria-label="Facebook">
-            <i className="fab fa-facebook-f"></i>
-          </a>
-          <a href="#" className="hover:text-yellow-500" aria-label="Twitter">
-            <i className="fab fa-twitter"></i>
-          </a>
-          <a href="#" className="hover:text-yellow-500" aria-label="Instagram">
-            <i className="fab fa-instagram"></i>
-          </a>
-          <a href="#" className="hover:text-yellow-500" aria-label="LinkedIn">
-            <i className="fab fa-linkedin-in"></i>
-          </a>
-        </div>
-        <p className="text-gray-500 text-sm">
-          © {new Date().getFullYear()} Auggie’s Home Remodeling. All rights reserved.
-        </p>
-      </div>
-    </footer>
+    <Box
+      sx={{
+        width: '100%',
+        backgroundColor: '#333',
+        color: 'white',
+        padding: '16px 0',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        marginTop: 'auto', // Ensure it's always at the bottom of the page
+      }}
+    >
+      {/* Social Media Links */}
+      <Box sx={{ display: 'flex', justifyContent: 'center', gap: '16px', marginBottom: '12px' }}>
+        <Link href="https://www.facebook.com/people/Auggies-Remodeling/61559702580670/" target="_blank" sx={{ color: 'white' }}>
+          <Facebook fontSize="large" />
+        </Link>
+        <Link href="https://www.instagram.com/auggiesremodeling/#" target="_blank" sx={{ color: 'white' }}>
+          <Instagram fontSize="large" />
+        </Link>
+      </Box>
+
+      {/* Business License Number and Phone Number */}
+      <Typography variant="body2" sx={{ marginBottom: '8px' }}>
+        Business License #: TCG079682
+      </Typography>
+      <Typography variant="body2" sx={{ marginBottom: '8px' }}>
+        Phone: (847)-302-7344
+      </Typography>
+
+      {/* Copyright */}
+      <Typography variant="body2" sx={{ color: '#ccc', marginTop: '16px' }}>
+        &copy; {new Date().getFullYear()} Auggie's Home Remodeling. All Rights Reserved.
+      </Typography>
+    </Box>
   );
 };
 
 export default Footer;
+
+
+// import React from 'react';
+// import { Box, Typography, Link } from '@mui/material';
+// import { Facebook, Instagram } from '@mui/icons-material'; // Import social media icons
+
+// const Footer = () => {
+//   return (
+//     <Box
+//       sx={{
+//         width: '100%',
+//         backgroundColor: '#333',
+//         color: 'white',
+//         padding: '12px 0', // Reduced padding to make it more compact
+//         display: 'flex',
+//         flexDirection: 'row', // Change to row for horizontal layout
+//         justifyContent: 'space-between', // Space between elements
+//         alignItems: 'center', // Align items vertically centered
+//       }}
+//     >
+//       {/* Social Media Links */}
+//       <Box sx={{ display: 'flex', gap: '16px' }}>
+//         <Link href="https://www.facebook.com/people/Auggies-Remodeling/61559702580670/" target="_blank" sx={{ color: 'white' }}>
+//           <Facebook fontSize="large" />
+//         </Link>
+//         <Link href="https://www.instagram.com/auggiesremodeling/#" target="_blank" sx={{ color: 'white' }}>
+//           <Instagram fontSize="large" />
+//         </Link>
+//       </Box>
+
+//       {/* Business Info and Phone */}
+//       <Box sx={{ display: 'flex', flexDirection: 'row', gap: '16px', alignItems: 'center' }}>
+//         <Typography variant="body2" sx={{ marginBottom: 0 }}>
+//           Business License #: TCG079682
+//         </Typography>
+//         <Typography variant="body2" sx={{ marginBottom: 0 }}>
+//           Phone: (847)-302-7344
+//         </Typography>
+//       </Box>
+
+//       {/* Copyright */}
+//       <Typography variant="body2" sx={{ color: '#ccc', fontSize: '12px' }}>
+//         &copy; {new Date().getFullYear()} Auggie's Home Remodeling. All Rights Reserved.
+//       </Typography>
+//     </Box>
+//   );
+// };
+
+// export default Footer;
