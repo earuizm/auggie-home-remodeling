@@ -78,8 +78,30 @@ const Home = () => {
       <Box sx={{ width: '100%', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
         <Box sx={{ height: '150px', position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1100 }}></Box>
 
+
         {/* Main content */}
         <Box sx={{ marginTop: '150px', flex: 1 }}>
+           {/* New Year Promotions Banner */}
+          <Box sx={{
+              backgroundColor: '#f5a623', // Orange color
+              color: 'white',
+              padding: '10px 0',
+              textAlign: 'center',
+              fontWeight: 'bold',
+              fontSize: '60px',
+              top: 0,
+              left: 0,
+              right: 0,
+              zIndex: 1000,
+            }}>
+              <Typography variant="body1" 
+              sx={{     
+              fontWeight: 'bold',
+              fontSize: '35px',
+            }} >
+                🎉 Inquire about our New Year's promotions! 🥂
+              </Typography>
+            </Box>
           <Box sx={{ position: 'relative', width: '100%', height: '700px', overflow: 'hidden' }}>
             {/* Image background */}
             <img
