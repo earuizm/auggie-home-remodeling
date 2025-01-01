@@ -19,6 +19,16 @@ const Gallery = () => {
     '/picture2.HEIC',
     '/picture3.HEIC',
     '/picture4.HEIC',
+    '/picture5.HEIC',
+    '/picture6.HEIC',
+    '/picture7.HEIC',
+    '/picture8.jpg',
+    '/picture9.jpg',
+    '/picture10.jpg',
+    '/picture11.jpg',
+    '/picture12.jpg',
+    '/picture13.jpg'
+
   ];
 
   const [open, setOpen] = useState(false);

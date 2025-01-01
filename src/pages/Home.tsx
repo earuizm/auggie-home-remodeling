@@ -142,54 +142,24 @@ const Home = () => {
                 border: '2px solid #ddd', // Border around the form
                 boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', // Shadow for the form
               }}>
-                <Typography variant="h6" sx={{ fontWeight: 'bold' }}>Schedule a Consultation</Typography>
-                <TextField
-                  label="Name"
-                  fullWidth
-                  margin="normal"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  error={Boolean(formErrors.name)}
-                  helperText={formErrors.name}
-                />
-                <TextField
-                  label="Email"
-                  fullWidth
-                  margin="normal"
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  error={Boolean(formErrors.email)}
-                  helperText={formErrors.email}
-                />
-                <TextField
-                  label="Phone"
-                  fullWidth
-                  margin="normal"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  error={Boolean(formErrors.phone)}
-                  helperText={formErrors.phone}
-                />
-                <TextField
-                  label="Message"
-                  fullWidth
-                  multiline
-                  rows={4}
-                  margin="normal"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  error={Boolean(formErrors.message)}
-                  helperText={formErrors.message}
-                />
-                <Button variant="contained" fullWidth sx={{ marginTop: '10px' }} onClick={handleSubmit} disabled={isSubmitting}>
-                  {isSubmitting ? 'Submitting...' : 'Submit'}
-                </Button>
-                {successMessage && <Typography color="success" sx={{ marginTop: '10px' }}>{successMessage}</Typography>}
+                 <Typography variant="h5" sx={{ fontWeight: 'bold', textAlign: 'center' }}>
+              For an estimate, reach out to us!
+            </Typography>
+            <Box sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              marginTop: '20px',
+              color: '#333',
+              fontSize: '18px',
+            }}>
+              <Typography variant="body1" sx={{ marginBottom: '10px' }}>
+                📧 <a href="mailto:auggiesremodeling@gmail.com" style={{ color: '#f5a623', textDecoration: 'none' }}>auggiesremodeling@gmail.com</a>
+              </Typography>
+              <Typography variant="body1">
+                📞 <a href="tel:+18473027344" style={{ color: '#f5a623', textDecoration: 'none' }}>(847)-302-7344</a>
+              </Typography>
+            </Box>
               </Box>
             )}
           </Box>
@@ -308,54 +278,24 @@ const Home = () => {
                 boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', // Shadow for the form
               }}
             >
-              <Typography variant="h6" sx={{ fontWeight: 'bold' }}>Schedule a Consultation</Typography>
-              <TextField
-                label="Name"
-                fullWidth
-                margin="normal"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                error={Boolean(formErrors.name)}
-                helperText={formErrors.name}
-              />
-              <TextField
-                label="Email"
-                fullWidth
-                margin="normal"
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                error={Boolean(formErrors.email)}
-                helperText={formErrors.email}
-              />
-              <TextField
-                label="Phone"
-                fullWidth
-                margin="normal"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                error={Boolean(formErrors.phone)}
-                helperText={formErrors.phone}
-              />
-              <TextField
-                label="Message"
-                fullWidth
-                multiline
-                rows={4}
-                margin="normal"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                error={Boolean(formErrors.message)}
-                helperText={formErrors.message}
-              />
-              <Button variant="contained" fullWidth sx={{ marginTop: '10px' }} onClick={handleSubmit} disabled={isSubmitting}>
-                {isSubmitting ? 'Submitting...' : 'Submit'}
-              </Button>
-              {successMessage && <Typography color="success" sx={{ marginTop: '10px' }}>{successMessage}</Typography>}
+            <Typography variant="h5" sx={{ fontWeight: 'bold', textAlign: 'center' }}>
+              For an estimate, reach out to us!
+            </Typography>
+            <Box sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              marginTop: '20px',
+              color: '#333',
+              fontSize: '18px',
+            }}>
+              <Typography variant="body1" sx={{ marginBottom: '10px' }}>
+                📧 <a href="mailto:auggiesremodeling@gmail.com" style={{ color: '#f5a623', textDecoration: 'none' }}>auggiesremodeling@gmail.com</a>
+              </Typography>
+              <Typography variant="body1">
+                📞 <a href="tel:+18473027344" style={{ color: '#f5a623', textDecoration: 'none' }}>(847)-302-7344</a>
+              </Typography>
+            </Box>
             </Box>
           )}
 
