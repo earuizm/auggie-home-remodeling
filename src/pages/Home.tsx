@@ -97,7 +97,7 @@ const Home = () => {
               <Typography variant="body1" 
               sx={{     
               fontWeight: 'bold',
-              fontSize: '35px',
+              fontSize: '25px',
             }} >
                 🎉 Inquire about our New Year's promotions! 🥂
               </Typography>
