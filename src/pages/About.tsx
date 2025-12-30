@@ -1,119 +1,177 @@
-import React from 'react';
-import { Box, Typography, Container } from '@mui/material';
+import React, { useEffect } from 'react';
+import { Box, Typography, Container, Grid, Card, CardContent, Avatar } from '@mui/material';
+import HandymanIcon from '@mui/icons-material/Handyman';
+import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
+import GroupsIcon from '@mui/icons-material/Groups';
+import { colors } from '../theme';
+import SEO from '../components/SEO';
 
 const About = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const values = [
+    {
+      title: 'Craftsmanship',
+      description: 'We believe in doing things the right way, not the easy way. Every detail matters.',
+      icon: <HandymanIcon sx={{ fontSize: 40, color: colors.accent.main }} />
+    },
+    {
+      title: 'Integrity',
+      description: 'Honest pricing, transparent timelines, and clear communication from start to finish.',
+      icon: <VerifiedUserIcon sx={{ fontSize: 40, color: colors.accent.main }} />
+    },
+    {
+      title: 'Community',
+      description: 'As a local business, we are dedicated to improving the homes and lives of our neighbors.',
+      icon: <GroupsIcon sx={{ fontSize: 40, color: colors.accent.main }} />
+    }
+  ];
+
   return (
-    <Container maxWidth="lg" sx={{ padding: '60px 20px' }}>
-      <Box sx={{ textAlign: 'center', marginBottom: '40px' }}>
-        <Typography
-          variant="h3"
-          sx={{
-            fontWeight: 'bold',
-            fontSize: { xs: '28px', md: '36px' },
-            color: '#333',
-            marginBottom: '20px',
-            fontFamily: "'Roboto', sans-serif",
-          }}
-        >
-          About Auggie's Home Remodeling
-        </Typography>
-        <Typography
-          variant="body1"
-          sx={{
-            fontSize: { xs: '16px', md: '18px' },
-            lineHeight: 1.7,
-            color: '#666',
-            fontFamily: "'Georgia', serif",
-          }}
-        >
-          Auggie's Home Remodeling is a family-owned business that has been proudly serving the Chicago area for over 25 years. We specialize in turning your house into a home, with a focus on bathroom and kitchen remodeling, and more. Our team’s mission is simple – to deliver exceptional quality, unparalleled service, and a personal touch that makes all the difference.
-        </Typography>
+    <Box sx={{ width: '100%', minHeight: '100vh', paddingBottom: '80px' }}>
+      <SEO
+        title="About Auggie's Home Remodeling | 25+ Years Experience"
+        description="Family-owned remodeling contractors serving Chicago since 1999. Dedicated to quality craftsmanship and customer satisfaction."
+      />
+
+      {/* ============ HERO SECTION ============ */}
+      <Box
+        sx={{
+          position: 'relative',
+          width: '100%',
+          height: '60vh',
+          minHeight: '400px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          backgroundAttachment: 'fixed',
+          backgroundImage: 'url(/picture3.webp)', // Using a general home image
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          '&::before': {
+            content: '""',
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: 'linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.5) 100%)',
+          }
+        }}
+      >
+        <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1, textAlign: 'center' }}>
+          <Typography
+            variant="h1"
+            sx={{
+              color: '#ffffff',
+              fontWeight: 800,
+              fontSize: { xs: '2.5rem', md: '4.5rem' },
+              mb: 2,
+              textShadow: '0 4px 10px rgba(0,0,0,0.3)'
+            }}
+          >
+            Building Dreams
+          </Typography>
+          <Typography
+            variant="h5"
+            sx={{
+              color: 'rgba(255,255,255,0.9)',
+              maxWidth: '800px',
+              mx: 'auto',
+              fontWeight: 400
+            }}
+          >
+            Auggie's Home Remodeling: Dedicated to quality since day one.
+          </Typography>
+        </Container>
       </Box>
 
-      {/* Experience & Care Section */}
-      <Box sx={{ textAlign: 'center', marginBottom: '40px' }}>
-        <Typography
-          variant="h4"
-          sx={{
-            fontWeight: 'bold',
-            fontSize: { xs: '24px', md: '32px' },
-            color: '#444',
-            marginBottom: '20px',
-            fontFamily: "'Roboto', sans-serif",
-          }}
-        >
-          Our Experience & Commitment to Quality
-        </Typography>
-        <Typography
-          variant="body1"
-          sx={{
-            fontSize: { xs: '16px', md: '18px' },
-            lineHeight: 1.7,
-            color: '#666',
-            marginBottom: '20px',
-            fontFamily: "'Georgia', serif",
-          }}
-        >
-          With over 25 years in the remodeling industry, our family has earned a reputation for excellence. We’ve built lasting relationships with our clients, who know they can rely on us to bring their visions to life. Our team takes great pride in the work we do and is committed to delivering flawless results that exceed expectations. Every project is treated with the utmost care, attention to detail, and a personalized touch that only a family business can offer.
-        </Typography>
+      {/* ============ OUR STORY ============ */}
+      <Container maxWidth="lg" sx={{ py: 10 }}>
+        <Grid container spacing={8} alignItems="center" justifyContent="center">
+          <Grid item xs={12} md={10} sx={{ textAlign: 'center' }}>
+            <Typography variant="overline" sx={{ color: colors.accent.main, fontWeight: 700, letterSpacing: 1.5 }}>
+              WHO WE ARE
+            </Typography>
+            <Typography variant="h2" sx={{ fontWeight: 800, mb: 3, color: colors.primary.main }}>
+              A Legacy of Excellence
+            </Typography>
+            <Typography variant="body1" paragraph sx={{ color: colors.text.secondary, fontSize: '1.1rem', lineHeight: 1.8 }}>
+              Founded with a passion for transformation, Auggie's Home Remodeling has grown from a small operation into one of the region's most trusted renovation partners.
+            </Typography>
+            <Typography variant="body1" paragraph sx={{ color: colors.text.secondary, fontSize: '1.1rem', lineHeight: 1.8 }}>
+              We understand that remodeling is more than just construction; it's about creating a space where memories are made. Our team of skilled architects, designs, and craftsmen work tirelessly to bring your unique vision to life.
+            </Typography>
+          </Grid>
+        </Grid>
+      </Container>
+
+      {/* ============ VALUES ============ */}
+      <Box sx={{ bgcolor: '#f8f9fa', py: 10 }}>
+        <Container maxWidth="lg">
+          <Typography variant="h2" align="center" sx={{ fontWeight: 800, mb: 8, color: colors.primary.main }}>
+            Our Core Values
+          </Typography>
+          <Grid container spacing={4}>
+            {values.map((value, index) => (
+              <Grid item xs={12} md={4} key={index}>
+                <Card
+                  elevation={0}
+                  sx={{
+                    height: '100%',
+                    bgcolor: 'white',
+                    borderRadius: '16px',
+                    boxShadow: '0 4px 20px rgba(0,0,0,0.05)',
+                    transition: 'transform 0.3s ease',
+                    '&:hover': { transform: 'translateY(-10px)' }
+                  }}
+                >
+                  <CardContent sx={{ textAlign: 'center', p: 4 }}>
+                    <Box
+                      sx={{
+                        width: 70,
+                        height: 70,
+                        bgcolor: '#f0f4f8',
+                        borderRadius: '50%',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        mx: 'auto',
+                        mb: 3
+                      }}
+                    >
+                      {value.icon}
+                    </Box>
+                    <Typography variant="h5" sx={{ fontWeight: 700, mb: 2 }}>{value.title}</Typography>
+                    <Typography variant="body1" sx={{ color: colors.text.secondary }}>{value.description}</Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
       </Box>
 
-      {/* Why We Care Section */}
-      <Box sx={{ textAlign: 'center', marginBottom: '40px' }}>
-        <Typography
-          variant="h4"
-          sx={{
-            fontWeight: 'bold',
-            fontSize: { xs: '24px', md: '32px' },
-            color: '#444',
-            marginBottom: '20px',
-            fontFamily: "'Roboto', sans-serif",
-          }}
-        >
-          Why We Care About Your Home
-        </Typography>
-        <Typography
-          variant="body1"
-          sx={{
-            fontSize: { xs: '16px', md: '18px' },
-            lineHeight: 1.7,
-            color: '#666',
-            marginBottom: '20px',
-            fontFamily: "'Georgia', serif",
-          }}
-        >
-          At Auggie's Home Remodeling, we’re not just here to complete a job – we’re here to make your dream home a reality. From the initial consultation to the final walk-through, we’re dedicated to providing personalized service that reflects our commitment to your satisfaction. We take the time to listen to your needs, understand your style, and offer solutions that work within your budget. Our family’s reputation is built on care, craftsmanship, and a genuine desire to improve your living space.
-        </Typography>
-      </Box>
-
-      {/* Our Promise */}
-      <Box sx={{ textAlign: 'center' }}>
-        <Typography
-          variant="h4"
-          sx={{
-            fontWeight: 'bold',
-            fontSize: { xs: '24px', md: '32px' },
-            color: '#444',
-            marginBottom: '20px',
-            fontFamily: "'Roboto', sans-serif",
-          }}
-        >
-          Our Promise to You
-        </Typography>
-        <Typography
-          variant="body1"
-          sx={{
-            fontSize: { xs: '16px', md: '18px' },
-            lineHeight: 1.7,
-            color: '#666',
-            marginBottom: '20px',
-            fontFamily: "'Georgia', serif",
-          }}
-        >
-          We promise to deliver not just a finished product, but a transformation. We care deeply about the work we do and the people we do it for. Our family is committed to providing the highest level of craftsmanship, and we ensure that every project reflects our core values: integrity, attention to detail, and dedication to excellence.
-        </Typography>
-      </Box>
-    </Container>
+      {/* ============ TEAM / STATS ============ */}
+      <Container maxWidth="lg" sx={{ py: 10 }}>
+        <Grid container spacing={4} justifyContent="center" sx={{ textAlign: 'center' }}>
+          <Grid item xs={6} md={3}>
+            <Typography variant="h2" sx={{ fontWeight: 800, color: colors.accent.main }}>15+</Typography>
+            <Typography variant="body1" sx={{ fontWeight: 600 }}>Years Experience</Typography>
+          </Grid>
+          <Grid item xs={6} md={3}>
+            <Typography variant="h2" sx={{ fontWeight: 800, color: colors.accent.main }}>300+</Typography>
+            <Typography variant="body1" sx={{ fontWeight: 600 }}>Projects Completed</Typography>
+          </Grid>
+          <Grid item xs={6} md={3}>
+            <Typography variant="h2" sx={{ fontWeight: 800, color: colors.accent.main }}>100%</Typography>
+            <Typography variant="body1" sx={{ fontWeight: 600 }}>Satisfaction Guarantee</Typography>
+          </Grid>
+        </Grid>
+      </Container>
+    </Box>
   );
 };
 

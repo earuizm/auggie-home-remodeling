@@ -1,33 +1,34 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Modal, IconButton, Portal } from '@mui/material';
+import { Box, Modal, IconButton, Portal, Typography } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
+import SEO from '../components/SEO';
 
 const Gallery = () => {
   const images = [
-    '/basement1.jpg',
-    '/bathroom1.jpg',
-    '/bathroom2.jpg',
-    '/bathroom3.jpg',
-    '/bathroom4.jpg',
-    '/floor1.jpg',
-    '/floor2.jpg',
-    '/floor3.jpg',
-    '/floor4.jpg',
-    '/kitchen1.jpg',
-    '/painting1.jpg',
-    '/picture1.jpg',
-    '/picture2.HEIC',
-    '/picture3.HEIC',
-    '/picture4.HEIC',
-    '/picture5.HEIC',
-    '/picture6.HEIC',
-    '/picture7.HEIC',
-    '/picture8.jpg',
-    '/picture9.jpg',
-    '/picture10.jpg',
-    '/picture11.jpg',
-    '/picture12.jpg',
-    '/picture13.jpg'
+    '/basement1.webp',
+    '/bathroom1.webp',
+    '/bathroom2.webp',
+    '/bathroom3.webp',
+    '/bathroom4.webp',
+    '/floor1.webp',
+    '/floor2.webp',
+    '/floor3.webp',
+    '/floor4.webp',
+    '/kitchen1.webp',
+    '/painting1.webp',
+    '/picture1.webp',
+    '/picture2.webp',
+    '/picture3.webp',
+    '/picture4.webp',
+    '/picture5.webp',
+    '/picture6.webp',
+    '/picture7.webp',
+    '/picture8.webp',
+    '/picture9.webp',
+    '/picture10.webp',
+    '/picture11.webp',
+    '/picture12.webp',
+    '/picture13.webp'
 
   ];
 
@@ -49,8 +50,17 @@ const Gallery = () => {
     window.scrollTo(0, 0);
   }, []);
 
+
   return (
     <Box sx={{ padding: '40px', backgroundColor: '#f4f4f4' }}>
+      <SEO
+        title="Project Gallery | Home Remodeling Chicago"
+        description="Browse our portfolio of kitchen, bathroom, and basement renovations in Chicago. See the quality craftsmanship of Auggie's Home Remodeling."
+        canonical="https://www.auggieshomeremodeling.com/gallery"
+      />
+      <Typography variant="h1" sx={{ textAlign: 'center', mb: 4, color: '#333', fontSize: { xs: '2rem', md: '3rem' } }}>
+        Our Project Gallery
+      </Typography>
       <Box
         sx={{
           display: 'grid',
@@ -63,7 +73,7 @@ const Gallery = () => {
             key={index}
             component="img"
             src={image}
-            alt={`Gallery Image ${index}`}
+            alt={`Home Remodeling Project Chicago Gallery ${index + 1}`}
             onClick={() => handleOpen(image)}
             sx={{
               width: '100%',
@@ -81,8 +91,8 @@ const Gallery = () => {
         ))}
       </Box>
 
-      <Modal 
-        open={open} 
+      <Modal
+        open={open}
         onClose={handleClose}
         sx={{
           position: 'fixed',

@@ -11,25 +11,28 @@ import BathroomRenovations from './pages/BathroomRenovations';
 import BasementRenovations from './pages/BasementRenovations';
 import Flooring from './pages/Flooring';
 import Painting from './pages/Painting';
+import Services from './pages/Services';
 import Footer from './components/Footer';
 
 function App() {
   return (
     <Router>
       <Header />
-      <Box sx={{ paddingTop: '150px' }}>
       <Routes>
+        {/* Home page - no padding, hero fills viewport */}
         <Route path="/" element={<Home />} />
-        <Route path="/gallery" element={<Gallery />} />
+
+        {/* Other pages - with top padding for header */}
+        <Route path="/gallery" element={<Box sx={{ paddingTop: '120px' }}><Gallery /></Box>} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/services" element={<Services />} />
         <Route path="/services/kitchen" element={<KitchenRemodeling />} />
         <Route path="/services/bathroom" element={<BathroomRenovations />} />
         <Route path="/services/basement" element={<BasementRenovations />} />
         <Route path="/services/flooring" element={<Flooring />} />
         <Route path="/services/painting" element={<Painting />} />
       </Routes>
-      </Box>
       <Footer />
     </Router>
   );
