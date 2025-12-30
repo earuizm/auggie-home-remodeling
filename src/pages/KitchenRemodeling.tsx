@@ -34,10 +34,10 @@ const KitchenRemodeling = () => {
   ];
 
   const galleryImages = [
-    '/kitchen1.jpg',
-    '/kitchen2.jpg',
-    '/kitchen3.jpg',
-    '/picture14.jpg'
+    '/kitchen1.webp',
+    '/picture2.webp',
+    '/picture3.webp',
+    '/picture4.webp'
   ];
 
   return (
@@ -58,7 +58,7 @@ const KitchenRemodeling = () => {
           alignItems: 'center',
           justifyContent: 'center',
           backgroundAttachment: 'fixed',
-          backgroundImage: 'url(/kitchen1.jpg)',
+          backgroundImage: 'url(/kitchen1.webp)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           '&::before': {
@@ -105,7 +105,7 @@ const KitchenRemodeling = () => {
           <Grid item xs={12} md={6}>
             <Box
               component="img"
-              src="/picture8.jpg"
+              src="/picture8.webp"
               alt="Custom Kitchen Remodeling in Chicago"
               sx={{
                 width: '100%',

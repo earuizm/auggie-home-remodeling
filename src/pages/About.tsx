@@ -47,7 +47,7 @@ const About = () => {
           alignItems: 'center',
           justifyContent: 'center',
           backgroundAttachment: 'fixed',
-          backgroundImage: 'url(/picture3.jpg)', // Using a general home image
+          backgroundImage: 'url(/picture3.webp)', // Using a general home image
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           '&::before': {

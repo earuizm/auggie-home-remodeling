@@ -18,7 +18,7 @@ const SEO: React.FC<SEOProps> = ({ title, description, canonical }) => {
         "@context": "https://schema.org",
         "@type": "HomeAndConstructionBusiness",
         "name": "Auggie's Home Remodeling",
-        "image": `${siteUrl}/auggie-logo-nbg.png`,
+        "image": `${siteUrl}/auggie-logo-nbg.webp`,
         "description": "Family-owned home remodeling serving Chicago and North Shore since 1999. Specializing in kitchen, bathroom, and basement renovations.",
         "address": {
             "@type": "PostalAddress",

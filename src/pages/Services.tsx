@@ -24,7 +24,7 @@ const Services = () => {
       description: 'Transform your culinary space with custom cabinetry, modern appliances, and functional layouts designed for your lifestyle.',
       icon: <KitchenIcon sx={{ fontSize: 40 }} />,
       path: '/services/kitchen',
-      image: '/kitchen1.jpg',
+      image: '/kitchen1.webp',
       features: ['Custom Cabinetry', 'Island Design', 'Modern Lighting', 'Backsplash installation']
     },
     {
@@ -32,7 +32,7 @@ const Services = () => {
       description: 'Create a personal sanctuary with spy-inspired designs, luxury fixtures, and efficient use of space.',
       icon: <BathtubIcon sx={{ fontSize: 40 }} />,
       path: '/services/bathroom',
-      image: '/bathroom1.jpg',
+      image: '/bathroom1.webp',
       features: ['Walk-in Showers', 'Custom Vanities', 'Tile Work', 'Heated Floors']
     },
     {
@@ -40,7 +40,7 @@ const Services = () => {
       description: 'Maximize your home\'s potential by converting your basement into a home theater, gym, office, or extra living space.',
       icon: <FoundationIcon sx={{ fontSize: 40 }} />,
       path: '/services/basement',
-      image: '/basement1.jpg',
+      image: '/basement1.webp',
       features: ['Entertainment Areas', 'Home Gyms', 'Guest Suites', 'Waterproofing']
     },
     {
@@ -48,7 +48,7 @@ const Services = () => {
       description: 'Brief new life into your rooms with premium hardwood, luxury vinyl, tile, or carpet installation services.',
       icon: <GridViewIcon sx={{ fontSize: 40 }} />,
       path: '/services/flooring',
-      image: '/floor1.jpg',
+      image: '/floor1.webp',
       features: ['Hardwood', 'Luxury Vinyl Plank', 'Ceramic Tile', 'Refinishing']
     },
     {
@@ -56,7 +56,7 @@ const Services = () => {
       description: 'Refresh your home\'s interior or exterior with our detailed painting services, using high-quality paints and finishes.',
       icon: <FormatPaintIcon sx={{ fontSize: 40 }} />,
       path: '/services/painting',
-      image: '/painting1.jpg',
+      image: '/painting1.webp',
       features: ['Interior/Exterior', 'Cabinet Painting', 'Drywall Repair', 'Color Consultation']
     },
   ];
@@ -103,7 +103,7 @@ const Services = () => {
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundImage: 'url(/kitchen1.jpg)', // Reusing a good image for now
+            backgroundImage: 'url(/kitchen1.webp)', // Reusing a good image for now
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             '&::before': {
@@ -332,7 +332,7 @@ const Services = () => {
               left: 0,
               right: 0,
               bottom: 0,
-              backgroundImage: 'url(/pattern-bg.png)', // detailed pattern if available, else subtle texture
+              background: `linear-gradient(135deg, ${colors.primary.main} 0%, ${colors.primary.light} 100%)`, // Solid gradient fallback
               opacity: 0.1,
             }}
           />

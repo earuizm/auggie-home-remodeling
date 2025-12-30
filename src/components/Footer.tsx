@@ -38,7 +38,7 @@ const Footer = () => {
           <Grid item xs={12} md={4}>
             <Box sx={{ mb: 3 }}>
               <img
-                src="/auggie-logo-nbg.png"
+                src="/auggie-logo-nbg.webp"
                 alt="Auggie's Home Remodeling"
                 style={{
                   height: '60px',

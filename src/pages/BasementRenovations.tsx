@@ -32,10 +32,10 @@ const BasementRenovations = () => {
   ];
 
   const galleryImages = [
-    '/basement1.jpg',
-    '/picture10.jpg', // Large interior shot
-    '/picture11.jpg', // Large interior shot
-    '/picture12.jpg'
+    '/basement1.webp',
+    '/picture10.webp', // Large interior shot
+    '/picture11.webp', // Large interior shot
+    '/picture12.webp'
   ];
 
   return (
@@ -56,7 +56,7 @@ const BasementRenovations = () => {
           alignItems: 'center',
           justifyContent: 'center',
           backgroundAttachment: 'fixed',
-          backgroundImage: 'url(/basement1.jpg)',
+          backgroundImage: 'url(/basement1.webp)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           '&::before': {
@@ -103,7 +103,7 @@ const BasementRenovations = () => {
           <Grid item xs={12} md={6}>
             <Box
               component="img"
-              src="/picture10.jpg"
+              src="/picture10.webp"
               alt="Finished Basement Home Theater"
               sx={{
                 width: '100%',

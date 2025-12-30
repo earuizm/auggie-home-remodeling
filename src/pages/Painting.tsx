@@ -32,10 +32,10 @@ const Painting = () => {
   ];
 
   const galleryImages = [
-    '/painting1.jpg',
-    '/picture1.jpg',
-    '/picture8.jpg', // Nice interior
-    '/picture12.jpg'
+    '/painting1.webp',
+    '/picture1.webp',
+    '/picture8.webp', // Nice interior
+    '/picture12.webp'
   ];
 
   return (
@@ -56,7 +56,7 @@ const Painting = () => {
           alignItems: 'center',
           justifyContent: 'center',
           backgroundAttachment: 'fixed',
-          backgroundImage: 'url(/painting1.jpg)',
+          backgroundImage: 'url(/painting1.webp)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           '&::before': {
@@ -103,7 +103,7 @@ const Painting = () => {
           <Grid item xs={12} md={6}>
             <Box
               component="img"
-              src="/picture1.jpg"
+              src="/picture1.webp"
               alt="Professional Interior Painting in Chicago"
               sx={{
                 width: '100%',

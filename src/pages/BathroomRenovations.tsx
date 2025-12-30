@@ -32,10 +32,10 @@ const BathroomRenovations = () => {
   ];
 
   const galleryImages = [
-    '/bathroom1.jpg',
-    '/bathroom2.jpg',
-    '/bathroom3.jpg',
-    '/bathroom4.jpg'
+    '/bathroom1.webp',
+    '/bathroom2.webp',
+    '/bathroom3.webp',
+    '/bathroom4.webp'
   ];
 
   return (
@@ -56,7 +56,7 @@ const BathroomRenovations = () => {
           alignItems: 'center',
           justifyContent: 'center',
           backgroundAttachment: 'fixed',
-          backgroundImage: 'url(/bathroom2.jpg)',
+          backgroundImage: 'url(/bathroom2.webp)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           '&::before': {
@@ -103,7 +103,7 @@ const BathroomRenovations = () => {
           <Grid item xs={12} md={6}>
             <Box
               component="img"
-              src="/bathroom3.jpg"
+              src="/bathroom3.webp"
               alt="Luxury Bathroom Remodeling in Chicago"
               sx={{
                 width: '100%',

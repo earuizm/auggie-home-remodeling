@@ -32,7 +32,7 @@ const Contact = () => {
           alignItems: 'center',
           justifyContent: 'center',
           backgroundAttachment: 'fixed',
-          backgroundImage: 'url(/picture8.jpg)', // Interior shot
+          backgroundImage: 'url(/picture8.webp)', // Interior shot
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           '&::before': {

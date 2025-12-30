@@ -34,35 +34,35 @@ const Home = () => {
       description: 'Transform your kitchen into the heart of your home with custom designs.',
       icon: <KitchenIcon sx={{ fontSize: 40 }} />,
       path: '/services/kitchen',
-      image: '/kitchen1.jpg',
+      image: '/kitchen1.webp',
     },
     {
       title: 'Bathroom Renovations',
       description: 'Create your personal spa with stunning bathroom transformations.',
       icon: <BathtubIcon sx={{ fontSize: 40 }} />,
       path: '/services/bathroom',
-      image: '/bathroom1.jpg',
+      image: '/bathroom1.webp',
     },
     {
       title: 'Basement Renovations',
       description: 'Unlock your basement\'s potential with beautiful living spaces.',
       icon: <FoundationIcon sx={{ fontSize: 40 }} />,
       path: '/services/basement',
-      image: '/basement1.jpg',
+      image: '/basement1.webp',
     },
     {
       title: 'Flooring',
       description: 'Quality flooring solutions that elevate every room.',
       icon: <GridViewIcon sx={{ fontSize: 40 }} />,
       path: '/services/flooring',
-      image: '/floor1.jpg',
+      image: '/floor1.webp',
     },
     {
       title: 'Painting',
       description: 'Professional painting services for a fresh new look.',
       icon: <FormatPaintIcon sx={{ fontSize: 40 }} />,
       path: '/services/painting',
-      image: '/painting1.jpg',
+      image: '/painting1.webp',
     },
   ];
 
@@ -109,7 +109,7 @@ const Home = () => {
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundImage: 'url(/picture1.jpg)',
+            backgroundImage: 'url(/picture1.webp)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             '&::before': {
@@ -241,7 +241,7 @@ const Home = () => {
                 transition: 'all 0.3s ease',
               }}
             >
-              Get A Free Estimatete
+              Get A Free Estimate
             </Button>
             <Button
               component={Link}
@@ -495,7 +495,7 @@ const Home = () => {
                 }}
               >
                 <img
-                  src="/picture8.jpg"
+                  src="/picture8.webp"
                   alt="Auggie's Home Remodeling Team Chicago"
                   style={{
                     width: '100%',
@@ -696,7 +696,7 @@ const Home = () => {
                 }}
               >
                 <img
-                  src="/service-area.png"
+                  src="/service-area.webp"
                   alt="Service Area Map"
                   style={{
                     width: '100%',
@@ -778,7 +778,7 @@ const Home = () => {
                 transition: 'all 0.3s ease',
               }}
             >
-              Get A Free Estimatete
+              Get A Free Estimate
             </Button>
             <Button
               component="a"

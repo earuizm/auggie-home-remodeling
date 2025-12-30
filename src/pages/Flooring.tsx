@@ -32,10 +32,10 @@ const Flooring = () => {
   ];
 
   const galleryImages = [
-    '/floor1.jpg',
-    '/floor2.jpg',
-    '/floor3.jpg',
-    '/floor4.jpg'
+    '/floor1.webp',
+    '/floor2.webp',
+    '/floor3.webp',
+    '/floor4.webp'
   ];
 
   return (
@@ -56,7 +56,7 @@ const Flooring = () => {
           alignItems: 'center',
           justifyContent: 'center',
           backgroundAttachment: 'fixed',
-          backgroundImage: 'url(/floor1.jpg)',
+          backgroundImage: 'url(/floor1.webp)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           '&::before': {
@@ -103,7 +103,7 @@ const Flooring = () => {
           <Grid item xs={12} md={6}>
             <Box
               component="img"
-              src="/floor2.jpg"
+              src="/floor2.webp"
               alt="Hardwood Floor Installation Detail in Chicago"
               sx={{
                 width: '100%',

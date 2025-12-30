@@ -129,7 +129,7 @@ const Header = () => {
             }}
           >
             <img
-              src="/auggie-logo-nbg.png"
+              src="/auggie-logo-nbg.webp"
               alt="Auggie's Home Remodeling"
               style={{
                 height: '120px',
