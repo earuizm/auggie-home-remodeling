@@ -1,35 +1,25 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Typography, Container, Grid, TextField, Button, Paper } from '@mui/material';
+import { Box, Typography, Container, Grid } from '@mui/material';
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
-import SendIcon from '@mui/icons-material/Send';
 import { colors } from '../theme';
+import SEO from '../components/SEO';
 
 const Contact = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
-  });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    alert('Thank you for your message! We will get back to you shortly.');
-  };
 
   return (
     <Box sx={{ width: '100%', minHeight: '100vh', paddingBottom: '80px' }}>
+      <SEO
+        title="Contact Us | Free Remodeling Estimates Chicago"
+        description="Get a free quote for your next home renovation. Contact Auggie's Home Remodeling in Chicago for kitchen, bath, and basement projects."
+      />
 
       {/* ============ HERO SECTION ============ */}
       <Box
@@ -87,147 +77,153 @@ const Contact = () => {
       <Container maxWidth="lg" sx={{ py: 10 }}>
         <Grid container spacing={8}>
 
-          {/* Contact Info */}
-          <Grid item xs={12} md={5}>
-            <Typography variant="h4" sx={{ fontWeight: 800, mb: 4, color: colors.primary.main }}>
+          {/* Contact Info - Centered */}
+          <Grid item xs={12} md={8} sx={{ mx: 'auto', textAlign: 'center' }}>
+            <Typography variant="h2" sx={{ fontWeight: 800, mb: 4, color: colors.primary.main, fontSize: { xs: '2rem', md: '2.5rem' } }}>
               Get in Touch
             </Typography>
-            <Typography variant="body1" paragraph sx={{ color: colors.text.secondary, mb: 6 }}>
+            <Typography variant="body1" paragraph sx={{ color: colors.text.secondary, mb: 6, fontSize: '1.2rem' }}>
               Ready to start your home renovation journey? Reach out to us for a free consultation and estimate. We're here to answer any questions you may have.
             </Typography>
 
-            <Box sx={{ display: 'flex', alignItems: 'center', mb: 4 }}>
-              <Box sx={{ mr: 2, color: colors.accent.main }}><PhoneIcon fontSize="large" /></Box>
-              <Box>
-                <Typography variant="subtitle2" sx={{ fontWeight: 700, color: colors.text.secondary }}>Phone</Typography>
-                <Typography
-                  component="a"
-                  href="tel:+18473027344"
-                  variant="h6"
-                  sx={{ textDecoration: 'none', color: 'inherit' }}
-                >
-                  (847) 302-7344
-                </Typography>
+            <Box sx={{
+              display: 'grid',
+              gridTemplateColumns: { xs: '1fr', md: 'repeat(3, 1fr)' },
+              gap: 4,
+              width: '100%',
+              mt: 4
+            }}>
+              {/* Phone */}
+              <Box
+                component="a"
+                href="tel:+18473027344"
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  gap: 2,
+                  textAlign: 'center',
+                  p: 4,
+                  borderRadius: '20px',
+                  bgcolor: 'white',
+                  boxShadow: '0 10px 30px rgba(0,0,0,0.05)',
+                  textDecoration: 'none',
+                  color: 'inherit',
+                  transition: 'all 0.3s ease',
+                  '&:hover': {
+                    transform: 'translateY(-10px)',
+                    boxShadow: '0 20px 40px rgba(0,0,0,0.1)',
+                    '& .icon-box': {
+                      bgcolor: colors.accent.main,
+                      color: 'white'
+                    }
+                  }
+                }}
+              >
+                <Box className="icon-box" sx={{
+                  color: colors.accent.main,
+                  bgcolor: colors.accent.main + '15',
+                  p: 2,
+                  borderRadius: '50%',
+                  transition: 'all 0.3s ease',
+                  mb: 1
+                }}>
+                  <PhoneIcon sx={{ fontSize: 32 }} />
+                </Box>
+                <Box>
+                  <Typography variant="subtitle2" sx={{ fontWeight: 700, color: colors.text.secondary, mb: 1, textTransform: 'uppercase', fontSize: '0.8rem', letterSpacing: '1px' }}>Call Us</Typography>
+                  <Typography variant="h6" sx={{ fontWeight: 700, color: colors.primary.main }}>
+                    (847) 302-7344
+                  </Typography>
+                </Box>
+              </Box>
+
+              {/* Email */}
+              <Box
+                component="a"
+                href="mailto:auggiesremodeling@gmail.com"
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  gap: 2,
+                  textAlign: 'center',
+                  p: 4,
+                  borderRadius: '20px',
+                  bgcolor: 'white',
+                  boxShadow: '0 10px 30px rgba(0,0,0,0.05)',
+                  textDecoration: 'none',
+                  color: 'inherit',
+                  transition: 'all 0.3s ease',
+                  '&:hover': {
+                    transform: 'translateY(-10px)',
+                    boxShadow: '0 20px 40px rgba(0,0,0,0.1)',
+                    '& .icon-box': {
+                      bgcolor: colors.accent.main,
+                      color: 'white'
+                    }
+                  }
+                }}
+              >
+                <Box className="icon-box" sx={{
+                  color: colors.accent.main,
+                  bgcolor: colors.accent.main + '15',
+                  p: 2,
+                  borderRadius: '50%',
+                  transition: 'all 0.3s ease',
+                  mb: 1
+                }}>
+                  <EmailIcon sx={{ fontSize: 32 }} />
+                </Box>
+                <Box>
+                  <Typography variant="subtitle2" sx={{ fontWeight: 700, color: colors.text.secondary, mb: 1, textTransform: 'uppercase', fontSize: '0.8rem', letterSpacing: '1px' }}>Email Us</Typography>
+                  <Typography variant="h6" sx={{ fontWeight: 700, color: colors.primary.main, fontSize: '1rem', wordBreak: 'break-all' }}>
+                    auggiesremodeling@gmail.com
+                  </Typography>
+                </Box>
+              </Box>
+
+              {/* Service Area */}
+              <Box
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  gap: 2,
+                  textAlign: 'center',
+                  p: 4,
+                  borderRadius: '20px',
+                  bgcolor: 'white',
+                  boxShadow: '0 10px 30px rgba(0,0,0,0.05)',
+                  transition: 'all 0.3s ease',
+                  '&:hover': {
+                    transform: 'translateY(-10px)',
+                    boxShadow: '0 20px 40px rgba(0,0,0,0.1)',
+                    '& .icon-box': {
+                      bgcolor: colors.accent.main,
+                      color: 'white'
+                    }
+                  }
+                }}
+              >
+                <Box className="icon-box" sx={{
+                  color: colors.accent.main,
+                  bgcolor: colors.accent.main + '15',
+                  p: 2,
+                  borderRadius: '50%',
+                  transition: 'all 0.3s ease',
+                  mb: 1
+                }}>
+                  <LocationOnIcon sx={{ fontSize: 32 }} />
+                </Box>
+                <Box>
+                  <Typography variant="subtitle2" sx={{ fontWeight: 700, color: colors.text.secondary, mb: 1, textTransform: 'uppercase', fontSize: '0.8rem', letterSpacing: '1px' }}>Service Area</Typography>
+                  <Typography variant="h6" sx={{ fontWeight: 700, color: colors.primary.main }}>
+                    Chicago & North Shore, IL
+                  </Typography>
+                </Box>
               </Box>
             </Box>
-
-            <Box sx={{ display: 'flex', alignItems: 'center', mb: 4 }}>
-              <Box sx={{ mr: 2, color: colors.accent.main }}><EmailIcon fontSize="large" /></Box>
-              <Box>
-                <Typography variant="subtitle2" sx={{ fontWeight: 700, color: colors.text.secondary }}>Email</Typography>
-                <Typography
-                  component="a"
-                  href="mailto:auggiesremodeling@gmail.com"
-                  variant="h6"
-                  sx={{ textDecoration: 'none', color: 'inherit', fontSize: '1.1rem' }}
-                >
-                  auggiesremodeling@gmail.com
-                </Typography>
-              </Box>
-            </Box>
-
-            <Box sx={{ display: 'flex', alignItems: 'center', mb: 4 }}>
-              <Box sx={{ mr: 2, color: colors.accent.main }}><LocationOnIcon fontSize="large" /></Box>
-              <Box>
-                <Typography variant="subtitle2" sx={{ fontWeight: 700, color: colors.text.secondary }}>Service Area</Typography>
-                <Typography variant="h6">Chicago & North Shore, IL</Typography>
-              </Box>
-            </Box>
-
-            <Box sx={{ display: 'flex', alignItems: 'center', mb: 4 }}>
-              <Box sx={{ mr: 2, color: colors.accent.main }}><CalendarTodayIcon fontSize="large" /></Box>
-              <Box>
-                <Typography variant="subtitle2" sx={{ fontWeight: 700, color: colors.text.secondary }}>Hours</Typography>
-                <Typography variant="body1">Mon-Fri: 8am - 6pm</Typography>
-                <Typography variant="body1">Sat: 10am - 4pm</Typography>
-              </Box>
-            </Box>
-          </Grid>
-
-          {/* Contact Form */}
-          <Grid item xs={12} md={7}>
-            <Paper
-              elevation={0}
-              sx={{
-                p: { xs: 3, md: 5 },
-                borderRadius: '24px',
-                boxShadow: '0 20px 60px rgba(0,0,0,0.08)',
-                bgcolor: 'white'
-              }}
-            >
-              <Typography variant="h5" sx={{ fontWeight: 700, mb: 4 }}>
-                Send us a Message
-              </Typography>
-              <form onSubmit={handleSubmit}>
-                <Grid container spacing={3}>
-                  <Grid item xs={12} sm={6}>
-                    <TextField
-                      fullWidth
-                      label="Your Name"
-                      name="name"
-                      variant="outlined"
-                      value={formData.name}
-                      onChange={handleChange}
-                      sx={{ '& .MuiOutlinedInput-root': { borderRadius: '12px' } }}
-                    />
-                  </Grid>
-                  <Grid item xs={12} sm={6}>
-                    <TextField
-                      fullWidth
-                      label="Email Address"
-                      name="email"
-                      type="email"
-                      variant="outlined"
-                      value={formData.email}
-                      onChange={handleChange}
-                      sx={{ '& .MuiOutlinedInput-root': { borderRadius: '12px' } }}
-                    />
-                  </Grid>
-                  <Grid item xs={12}>
-                    <TextField
-                      fullWidth
-                      label="Phone Number"
-                      name="phone"
-                      variant="outlined"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      sx={{ '& .MuiOutlinedInput-root': { borderRadius: '12px' } }}
-                    />
-                  </Grid>
-                  <Grid item xs={12}>
-                    <TextField
-                      fullWidth
-                      label="Project Description"
-                      name="message"
-                      multiline
-                      rows={4}
-                      variant="outlined"
-                      value={formData.message}
-                      onChange={handleChange}
-                      sx={{ '& .MuiOutlinedInput-root': { borderRadius: '12px' } }}
-                    />
-                  </Grid>
-                  <Grid item xs={12}>
-                    <Button
-                      type="submit"
-                      variant="contained"
-                      fullWidth
-                      size="large"
-                      endIcon={<SendIcon />}
-                      sx={{
-                        py: 1.5,
-                        borderRadius: '12px',
-                        fontWeight: 700,
-                        bgcolor: colors.primary.main,
-                        '&:hover': { bgcolor: colors.primary.dark }
-                      }}
-                    >
-                      Send Message
-                    </Button>
-                  </Grid>
-                </Grid>
-              </form>
-            </Paper>
           </Grid>
         </Grid>
       </Container>

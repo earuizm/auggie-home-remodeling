@@ -6,6 +6,7 @@ import WeekendIcon from '@mui/icons-material/Weekend';
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { colors } from '../theme';
+import SEO from '../components/SEO';
 
 const BasementRenovations = () => {
   useEffect(() => {
@@ -39,6 +40,10 @@ const BasementRenovations = () => {
 
   return (
     <Box sx={{ width: '100%', minHeight: '100vh', paddingBottom: '80px' }}>
+      <SEO
+        title="Basement Finishing Chicago | Home Theater & Gyms"
+        description="Expand your living space with expert basement finishing. Home theaters, guest suites, and gyms designed by Auggie's Home Remodeling."
+      />
 
       {/* ============ HERO SECTION ============ */}
       <Box
@@ -99,7 +104,7 @@ const BasementRenovations = () => {
             <Box
               component="img"
               src="/picture10.jpg"
-              alt="Finished Basement"
+              alt="Finished Basement Home Theater"
               sx={{
                 width: '100%',
                 borderRadius: '20px',
@@ -116,7 +121,7 @@ const BasementRenovations = () => {
             <Typography variant="overline" sx={{ color: colors.accent.main, fontWeight: 700, letterSpacing: 1.5 }}>
               EXPAND YOUR LIFESTYLE
             </Typography>
-            <Typography variant="h3" sx={{ fontWeight: 800, mb: 3, color: colors.primary.main }}>
+            <Typography variant="h2" sx={{ fontWeight: 800, mb: 3, color: colors.primary.main }}>
               More Space, More Value
             </Typography>
             <Typography variant="body1" paragraph sx={{ color: colors.text.secondary, fontSize: '1.1rem', lineHeight: 1.8 }}>
@@ -147,7 +152,7 @@ const BasementRenovations = () => {
       {/* ============ FEATURES SECTION ============ */}
       <Box sx={{ bgcolor: '#f8f9fa', py: 10 }}>
         <Container maxWidth="lg">
-          <Typography variant="h3" align="center" sx={{ fontWeight: 800, mb: 8, color: colors.primary.main }}>
+          <Typography variant="h2" align="center" sx={{ fontWeight: 800, mb: 8, color: colors.primary.main }}>
             Possibilities are Endless
           </Typography>
           <Grid container spacing={4}>
@@ -191,7 +196,7 @@ const BasementRenovations = () => {
 
       {/* ============ GALLERY PREVIEW ============ */}
       <Container maxWidth="lg" sx={{ py: 10 }}>
-        <Typography variant="h3" align="center" sx={{ fontWeight: 800, mb: 6, color: colors.primary.main }}>
+        <Typography variant="h2" align="center" sx={{ fontWeight: 800, mb: 6, color: colors.primary.main }}>
           Recent Tranformations
         </Typography>
         <Grid container spacing={2}>
@@ -211,7 +216,7 @@ const BasementRenovations = () => {
                 <Box
                   component="img"
                   src={img}
-                  alt={`Basement ${index}`}
+                  alt={`Basement Renovation Project ${index + 1}`}
                   sx={{
                     width: '100%',
                     height: '100%',
@@ -228,7 +233,7 @@ const BasementRenovations = () => {
       {/* ============ CTA SECTION ============ */}
       <Box sx={{ bgcolor: colors.primary.main, py: 8, color: 'white', textAlign: 'center' }}>
         <Container maxWidth="md">
-          <Typography variant="h4" sx={{ fontWeight: 700, mb: 3 }}>
+          <Typography variant="h2" sx={{ fontWeight: 700, mb: 3 }}>
             Maximize Your Home's Potential
           </Typography>
           <Button

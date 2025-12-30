@@ -6,6 +6,7 @@ import LayersIcon from '@mui/icons-material/Layers';
 import SquareFootIcon from '@mui/icons-material/SquareFoot';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { colors } from '../theme';
+import SEO from '../components/SEO';
 
 const Flooring = () => {
   useEffect(() => {
@@ -39,6 +40,10 @@ const Flooring = () => {
 
   return (
     <Box sx={{ width: '100%', minHeight: '100vh', paddingBottom: '80px' }}>
+      <SEO
+        title="Flooring Installation Chicago | Hardwood & Tile"
+        description="Professional flooring installation in Chicago. Hardwood, luxury vinyl, and custom tile flooring by Auggie's Home Remodeling."
+      />
 
       {/* ============ HERO SECTION ============ */}
       <Box
@@ -99,7 +104,7 @@ const Flooring = () => {
             <Box
               component="img"
               src="/floor2.jpg"
-              alt="Hardwood Floor Detail"
+              alt="Hardwood Floor Installation Detail in Chicago"
               sx={{
                 width: '100%',
                 borderRadius: '20px',
@@ -116,7 +121,7 @@ const Flooring = () => {
             <Typography variant="overline" sx={{ color: colors.accent.main, fontWeight: 700, letterSpacing: 1.5 }}>
               ELEVATE EVERY STEP
             </Typography>
-            <Typography variant="h3" sx={{ fontWeight: 800, mb: 3, color: colors.primary.main }}>
+            <Typography variant="h2" sx={{ fontWeight: 800, mb: 3, color: colors.primary.main }}>
               Quality You Can Stand On
             </Typography>
             <Typography variant="body1" paragraph sx={{ color: colors.text.secondary, fontSize: '1.1rem', lineHeight: 1.8 }}>
@@ -147,7 +152,7 @@ const Flooring = () => {
       {/* ============ FEATURES SECTION ============ */}
       <Box sx={{ bgcolor: '#f8f9fa', py: 10 }}>
         <Container maxWidth="lg">
-          <Typography variant="h3" align="center" sx={{ fontWeight: 800, mb: 8, color: colors.primary.main }}>
+          <Typography variant="h2" align="center" sx={{ fontWeight: 800, mb: 8, color: colors.primary.main }}>
             Expert Installation
           </Typography>
           <Grid container spacing={4}>
@@ -191,7 +196,7 @@ const Flooring = () => {
 
       {/* ============ GALLERY PREVIEW ============ */}
       <Container maxWidth="lg" sx={{ py: 10 }}>
-        <Typography variant="h3" align="center" sx={{ fontWeight: 800, mb: 6, color: colors.primary.main }}>
+        <Typography variant="h2" align="center" sx={{ fontWeight: 800, mb: 6, color: colors.primary.main }}>
           Pattern & Texture
         </Typography>
         <Grid container spacing={2}>
@@ -211,7 +216,7 @@ const Flooring = () => {
                 <Box
                   component="img"
                   src={img}
-                  alt={`Flooring Sample ${index}`}
+                  alt={`Flooring Installation Project ${index + 1}`}
                   sx={{
                     width: '100%',
                     height: '100%',
@@ -228,7 +233,7 @@ const Flooring = () => {
       {/* ============ CTA SECTION ============ */}
       <Box sx={{ bgcolor: colors.primary.main, py: 8, color: 'white', textAlign: 'center' }}>
         <Container maxWidth="md">
-          <Typography variant="h4" sx={{ fontWeight: 700, mb: 3 }}>
+          <Typography variant="h2" sx={{ fontWeight: 700, mb: 3 }}>
             Ready to Refresh Your Floors?
           </Typography>
           <Button

@@ -6,6 +6,7 @@ import BrushIcon from '@mui/icons-material/Brush';
 import HomeIcon from '@mui/icons-material/Home';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { colors } from '../theme';
+import SEO from '../components/SEO';
 
 const Painting = () => {
   useEffect(() => {
@@ -39,6 +40,10 @@ const Painting = () => {
 
   return (
     <Box sx={{ width: '100%', minHeight: '100vh', paddingBottom: '80px' }}>
+      <SEO
+        title="Interior & Exterior House Painting Chicago"
+        description="Refresh your home with professional painting services. Interior and exterior painting experts in Chicago and North Shore."
+      />
 
       {/* ============ HERO SECTION ============ */}
       <Box
@@ -99,7 +104,7 @@ const Painting = () => {
             <Box
               component="img"
               src="/picture1.jpg"
-              alt="Painted Interior"
+              alt="Professional Interior Painting in Chicago"
               sx={{
                 width: '100%',
                 borderRadius: '20px',
@@ -116,7 +121,7 @@ const Painting = () => {
             <Typography variant="overline" sx={{ color: colors.accent.main, fontWeight: 700, letterSpacing: 1.5 }}>
               COLOR & FINISH
             </Typography>
-            <Typography variant="h3" sx={{ fontWeight: 800, mb: 3, color: colors.primary.main }}>
+            <Typography variant="h2" sx={{ fontWeight: 800, mb: 3, color: colors.primary.main }}>
               Precision in Every Stroke
             </Typography>
             <Typography variant="body1" paragraph sx={{ color: colors.text.secondary, fontSize: '1.1rem', lineHeight: 1.8 }}>
@@ -147,7 +152,7 @@ const Painting = () => {
       {/* ============ FEATURES SECTION ============ */}
       <Box sx={{ bgcolor: '#f8f9fa', py: 10 }}>
         <Container maxWidth="lg">
-          <Typography variant="h3" align="center" sx={{ fontWeight: 800, mb: 8, color: colors.primary.main }}>
+          <Typography variant="h2" align="center" sx={{ fontWeight: 800, mb: 8, color: colors.primary.main }}>
             Our Painting Services
           </Typography>
           <Grid container spacing={4}>
@@ -191,7 +196,7 @@ const Painting = () => {
 
       {/* ============ GALLERY PREVIEW ============ */}
       <Container maxWidth="lg" sx={{ py: 10 }}>
-        <Typography variant="h3" align="center" sx={{ fontWeight: 800, mb: 6, color: colors.primary.main }}>
+        <Typography variant="h2" align="center" sx={{ fontWeight: 800, mb: 6, color: colors.primary.main }}>
           Recent Projects
         </Typography>
         <Grid container spacing={2}>
@@ -211,7 +216,7 @@ const Painting = () => {
                 <Box
                   component="img"
                   src={img}
-                  alt={`Painting ${index}`}
+                  alt={`Home Painting Project Chicago ${index + 1}`}
                   sx={{
                     width: '100%',
                     height: '100%',
@@ -228,7 +233,7 @@ const Painting = () => {
       {/* ============ CTA SECTION ============ */}
       <Box sx={{ bgcolor: colors.primary.main, py: 8, color: 'white', textAlign: 'center' }}>
         <Container maxWidth="md">
-          <Typography variant="h4" sx={{ fontWeight: 700, mb: 3 }}>
+          <Typography variant="h2" sx={{ fontWeight: 700, mb: 3 }}>
             Ready for a Fresh Look?
           </Typography>
           <Button

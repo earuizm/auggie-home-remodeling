@@ -4,6 +4,7 @@ import HandymanIcon from '@mui/icons-material/Handyman';
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 import GroupsIcon from '@mui/icons-material/Groups';
 import { colors } from '../theme';
+import SEO from '../components/SEO';
 
 const About = () => {
   useEffect(() => {
@@ -30,6 +31,10 @@ const About = () => {
 
   return (
     <Box sx={{ width: '100%', minHeight: '100vh', paddingBottom: '80px' }}>
+      <SEO
+        title="About Auggie's Home Remodeling | 25+ Years Experience"
+        description="Family-owned remodeling contractors serving Chicago since 1999. Dedicated to quality craftsmanship and customer satisfaction."
+      />
 
       {/* ============ HERO SECTION ============ */}
       <Box
@@ -90,7 +95,7 @@ const About = () => {
             <Typography variant="overline" sx={{ color: colors.accent.main, fontWeight: 700, letterSpacing: 1.5 }}>
               WHO WE ARE
             </Typography>
-            <Typography variant="h3" sx={{ fontWeight: 800, mb: 3, color: colors.primary.main }}>
+            <Typography variant="h2" sx={{ fontWeight: 800, mb: 3, color: colors.primary.main }}>
               A Legacy of Excellence
             </Typography>
             <Typography variant="body1" paragraph sx={{ color: colors.text.secondary, fontSize: '1.1rem', lineHeight: 1.8 }}>
@@ -106,7 +111,7 @@ const About = () => {
       {/* ============ VALUES ============ */}
       <Box sx={{ bgcolor: '#f8f9fa', py: 10 }}>
         <Container maxWidth="lg">
-          <Typography variant="h3" align="center" sx={{ fontWeight: 800, mb: 8, color: colors.primary.main }}>
+          <Typography variant="h2" align="center" sx={{ fontWeight: 800, mb: 8, color: colors.primary.main }}>
             Our Core Values
           </Typography>
           <Grid container spacing={4}>

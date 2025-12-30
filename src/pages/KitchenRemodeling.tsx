@@ -6,44 +6,46 @@ import ArchitectureIcon from '@mui/icons-material/Architecture';
 import KitchenIcon from '@mui/icons-material/Kitchen';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import CountertopsIcon from '@mui/icons-material/Countertops';
 import { colors } from '../theme';
+import SEO from '../components/SEO';
 
 const KitchenRemodeling = () => {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   const features = [
     {
-      title: 'Custom Design',
-      description: 'We work with you to create a layout that maximizes space and efficient workflow.',
-      icon: <ArchitectureIcon sx={{ fontSize: 40, color: colors.accent.main }} />
-    },
-    {
-      title: 'Premium Materials',
-      description: 'From granite countertops to hardwood custom cabinets, we use only the best.',
+      title: 'Custom Cabinetry',
+      description: 'Handcrafted cabinets designed to maximize storage and match your style.',
       icon: <KitchenIcon sx={{ fontSize: 40, color: colors.accent.main }} />
     },
     {
-      title: 'Expert Installation',
-      description: 'Our licensed craftsmen ensure every detail is perfect, from tiling to plumbing.',
-      icon: <AutoFixHighIcon sx={{ fontSize: 40, color: colors.accent.main }} />
+      title: 'Luxury Countertops',
+      description: 'Premium granite, quartz, and marble surfaces for a stunning finish.',
+      icon: <CountertopsIcon sx={{ fontSize: 40, color: colors.accent.main }} />
+    },
+    {
+      title: 'Smart Layouts',
+      description: 'Optimized floor plans for better flow, functionality, and entertaining.',
+      icon: <ArchitectureIcon sx={{ fontSize: 40, color: colors.accent.main }} />
     }
   ];
 
   const galleryImages = [
     '/kitchen1.jpg',
-    '/picture8.jpg',
-    '/picture9.jpg',
-    // Fallback/Placeholder if needed, or reuse
-    '/picture4.HEIC' // Keeping original list but HEIC might be an issue in some browsers
+    '/kitchen2.jpg',
+    '/kitchen3.jpg',
+    '/picture14.jpg'
   ];
 
   return (
     <Box sx={{ width: '100%', minHeight: '100vh', paddingBottom: '80px' }}>
+      <SEO
+        title="Kitchen Remodeling Chicago & North Shore | Custom Design"
+        description="Transform your kitchen with Auggie's Home Remodeling. Custom cabinets, luxury countertops, and expert design services in Chicago."
+      />
 
       {/* ============ HERO SECTION ============ */}
       <Box
@@ -104,7 +106,7 @@ const KitchenRemodeling = () => {
             <Box
               component="img"
               src="/picture8.jpg"
-              alt="Beautiful Kitchen Detail"
+              alt="Custom Kitchen Remodeling in Chicago"
               sx={{
                 width: '100%',
                 borderRadius: '20px',
@@ -121,7 +123,7 @@ const KitchenRemodeling = () => {
             <Typography variant="overline" sx={{ color: colors.accent.main, fontWeight: 700, letterSpacing: 1.5 }}>
               TRANSFORM YOUR SPACE
             </Typography>
-            <Typography variant="h3" sx={{ fontWeight: 800, mb: 3, color: colors.primary.main }}>
+            <Typography variant="h2" sx={{ fontWeight: 800, mb: 3, color: colors.primary.main }}>
               Kitchens Designed for Life
             </Typography>
             <Typography variant="body1" paragraph sx={{ color: colors.text.secondary, fontSize: '1.1rem', lineHeight: 1.8 }}>
@@ -155,7 +157,7 @@ const KitchenRemodeling = () => {
       {/* ============ FEATURES SECTION ============ */}
       <Box sx={{ bgcolor: '#f8f9fa', py: 10 }}>
         <Container maxWidth="lg">
-          <Typography variant="h3" align="center" sx={{ fontWeight: 800, mb: 8, color: colors.primary.main }}>
+          <Typography variant="h2" align="center" sx={{ fontWeight: 800, mb: 8, color: colors.primary.main }}>
             Why Choose Us?
           </Typography>
           <Grid container spacing={4}>
@@ -199,7 +201,7 @@ const KitchenRemodeling = () => {
 
       {/* ============ GALLERY PREVIEW ============ */}
       <Container maxWidth="lg" sx={{ py: 10 }}>
-        <Typography variant="h3" align="center" sx={{ fontWeight: 800, mb: 6, color: colors.primary.main }}>
+        <Typography variant="h2" align="center" sx={{ fontWeight: 800, mb: 6, color: colors.primary.main }}>
           Recent Projects
         </Typography>
         <Grid container spacing={2}>
@@ -220,7 +222,7 @@ const KitchenRemodeling = () => {
                 <Box
                   component="img"
                   src={img}
-                  alt={`Gallery item ${index}`}
+                  alt={`Kitchen Remodeling Project Chicago ${index + 1}`}
                   sx={{
                     width: '100%',
                     height: '100%',
@@ -253,7 +255,7 @@ const KitchenRemodeling = () => {
       {/* ============ CTA SECTION ============ */}
       <Box sx={{ bgcolor: colors.primary.main, py: 8, color: 'white', textAlign: 'center' }}>
         <Container maxWidth="md">
-          <Typography variant="h4" sx={{ fontWeight: 700, mb: 3 }}>
+          <Typography variant="h2" sx={{ fontWeight: 700, mb: 3 }}>
             Ready for your Dream Kitchen?
           </Typography>
           <Typography variant="h6" sx={{ mb: 4, opacity: 0.9 }}>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Modal, IconButton, Portal } from '@mui/material';
+import { Box, Modal, IconButton, Portal, Typography } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
+import SEO from '../components/SEO';
 
 const Gallery = () => {
   const images = [
@@ -16,12 +17,12 @@ const Gallery = () => {
     '/kitchen1.jpg',
     '/painting1.jpg',
     '/picture1.jpg',
-    '/picture2.HEIC',
-    '/picture3.HEIC',
-    '/picture4.HEIC',
-    '/picture5.HEIC',
-    '/picture6.HEIC',
-    '/picture7.HEIC',
+    '/picture2.jpg',
+    '/picture3.jpg',
+    '/picture4.jpg',
+    '/picture5.jpg',
+    '/picture6.jpg',
+    '/picture7.jpg',
     '/picture8.jpg',
     '/picture9.jpg',
     '/picture10.jpg',
@@ -49,8 +50,17 @@ const Gallery = () => {
     window.scrollTo(0, 0);
   }, []);
 
+
   return (
     <Box sx={{ padding: '40px', backgroundColor: '#f4f4f4' }}>
+      <SEO
+        title="Project Gallery | Home Remodeling Chicago"
+        description="Browse our portfolio of kitchen, bathroom, and basement renovations in Chicago. See the quality craftsmanship of Auggie's Home Remodeling."
+        canonical="https://www.auggieshomeremodeling.com/gallery"
+      />
+      <Typography variant="h1" sx={{ textAlign: 'center', mb: 4, color: '#333', fontSize: { xs: '2rem', md: '3rem' } }}>
+        Our Project Gallery
+      </Typography>
       <Box
         sx={{
           display: 'grid',
@@ -63,7 +73,7 @@ const Gallery = () => {
             key={index}
             component="img"
             src={image}
-            alt={`Gallery Image ${index}`}
+            alt={`Home Remodeling Project Chicago Gallery ${index + 1}`}
             onClick={() => handleOpen(image)}
             sx={{
               width: '100%',
@@ -81,8 +91,8 @@ const Gallery = () => {
         ))}
       </Box>
 
-      <Modal 
-        open={open} 
+      <Modal
+        open={open}
         onClose={handleClose}
         sx={{
           position: 'fixed',

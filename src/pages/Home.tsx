@@ -12,6 +12,7 @@ import StarIcon from '@mui/icons-material/Star';
 import HandymanIcon from '@mui/icons-material/Handyman';
 import VerifiedIcon from '@mui/icons-material/Verified';
 import GroupsIcon from '@mui/icons-material/Groups';
+import SEO from '../components/SEO';
 import { colors } from '../theme';
 
 const Home = () => {
@@ -83,6 +84,11 @@ const Home = () => {
 
   return (
     <Box sx={{ width: '100%', minHeight: '100vh' }}>
+      <SEO
+        title="Home Remodeling Chicago | Kitchen, Bath & Basement Experts"
+        description="Auggie's Home Remodeling offers expert kitchen, bathroom, and basement renovations in Chicago & North Shore. Family-owned, licensed, and insured since 1999."
+        canonical="https://www.auggieshomeremodeling.com/"
+      />
       {/* ============ HERO SECTION ============ */}
       <Box
         sx={{
@@ -490,7 +496,7 @@ const Home = () => {
               >
                 <img
                   src="/picture8.jpg"
-                  alt="Home Remodeling"
+                  alt="Auggie's Home Remodeling Team Chicago"
                   style={{
                     width: '100%',
                     height: 'auto',
@@ -536,7 +542,7 @@ const Home = () => {
                 About Us
               </Typography>
               <Typography
-                variant="h3"
+                variant="h2"
                 sx={{
                   color: colors.primary.main,
                   fontWeight: 700,
@@ -645,7 +651,7 @@ const Home = () => {
                 Service Areas
               </Typography>
               <Typography
-                variant="h3"
+                variant="h2"
                 sx={{
                   color: '#fff',
                   fontWeight: 700,

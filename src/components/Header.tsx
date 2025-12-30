@@ -381,7 +381,7 @@ const Header = () => {
                 boxShadow: `0 4px 20px ${colors.accent.main}40`,
               }}
             >
-              Get A Free Estimatete
+              Get A Free Estimate
             </Button>
           </Box>
         </Box>
