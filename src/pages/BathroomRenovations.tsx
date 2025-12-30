@@ -1,122 +1,258 @@
-import React, { useState, useEffect } from 'react';
-import { Box, Typography, Fade } from '@mui/material';
-import { CheckCircle } from '@mui/icons-material'; // Check icon for features
+import React, { useEffect } from 'react';
+import { Box, Typography, Container, Grid, Card, CardContent, Button } from '@mui/material';
+import { Link } from 'react-router-dom';
+import BathtubIcon from '@mui/icons-material/Bathtub';
+import WaterDropIcon from '@mui/icons-material/WaterDrop';
+import SpaIcon from '@mui/icons-material/Spa';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { colors } from '../theme';
 
 const BathroomRenovations = () => {
-  const images = ['/bathroom1.jpg', '/bathroom2.jpg', '/bathroom3.jpg', '/bathroom4.jpg']; // images for the carousel
-  const [currentImage, setCurrentImage] = useState(0);
-
-  // Function to change image every 3 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImage((prevImage) => (prevImage + 1) % images.length);
-    }, 3000); // 3 seconds for each image
-
-    return () => clearInterval(interval); // Cleanup on unmount
-  }, []);
-
-  // Scroll to top whenever this component is rendered
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  const features = [
+    {
+      title: 'Spa-Like Luxury',
+      description: 'Transform your daily routine with a bathroom that feels like a private retreat.',
+      icon: <SpaIcon sx={{ fontSize: 40, color: colors.accent.main }} />
+    },
+    {
+      title: 'Custom Tile Work',
+      description: 'Exquisite tiling options for showers, floors, and backsplashes.',
+      icon: <WaterDropIcon sx={{ fontSize: 40, color: colors.accent.main }} />
+    },
+    {
+      title: 'Modern Fixtures',
+      description: 'High-efficiency toilets, rainfall showerheads, and elegant vanities.',
+      icon: <BathtubIcon sx={{ fontSize: 40, color: colors.accent.main }} />
+    }
+  ];
+
+  const galleryImages = [
+    '/bathroom1.jpg',
+    '/bathroom2.jpg',
+    '/bathroom3.jpg',
+    '/bathroom4.jpg'
+  ];
+
   return (
-    <Box sx={{ width: '100%', padding: '40px 0', backgroundColor: '#f4f4f4' }}>
-      {/* Image Carousel */}
-      <Box sx={{ position: 'relative', width: '100%', height: { xs: '400px', md: '800px' }, overflow: 'hidden' }}>
-        {images.map((image, index) => (
-          <Fade in={currentImage === index} timeout={1000} key={index}>
+    <Box sx={{ width: '100%', minHeight: '100vh', paddingBottom: '80px' }}>
+
+      {/* ============ HERO SECTION ============ */}
+      <Box
+        sx={{
+          position: 'relative',
+          width: '100%',
+          height: '70vh',
+          minHeight: '500px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          backgroundAttachment: 'fixed',
+          backgroundImage: 'url(/bathroom2.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          '&::before': {
+            content: '""',
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: 'linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.5) 100%)',
+          }
+        }}
+      >
+        <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1, textAlign: 'center' }}>
+          <Typography
+            variant="h1"
+            sx={{
+              color: '#ffffff',
+              fontWeight: 800,
+              fontSize: { xs: '2.5rem', md: '4.5rem' },
+              mb: 2,
+              textShadow: '0 4px 10px rgba(0,0,0,0.3)'
+            }}
+          >
+            Bathroom Renovations
+          </Typography>
+          <Typography
+            variant="h5"
+            sx={{
+              color: 'rgba(255,255,255,0.9)',
+              maxWidth: '800px',
+              mx: 'auto',
+              fontWeight: 400
+            }}
+          >
+            Create your personal sanctuary. Functionality meets elegance.
+          </Typography>
+        </Container>
+      </Box>
+
+      {/* ============ INTRO SECTION ============ */}
+      <Container maxWidth="lg" sx={{ py: 10 }}>
+        <Grid container spacing={6} alignItems="center">
+          <Grid item xs={12} md={6}>
             <Box
               component="img"
-              src={image}
-              alt={`Bathroom Renovation ${index}`}
+              src="/bathroom3.jpg"
+              alt="Luxury Bathroom"
               sx={{
-                position: 'absolute',
                 width: '100%',
-                height: '100%',
-                objectFit: 'contain',
-                maxHeight: '100vh',
-                transition: 'opacity 1s ease-in-out',
+                borderRadius: '20px',
+                boxShadow: '0 20px 40px rgba(0,0,0,0.1)',
+                transform: 'rotate(2deg)',
+                transition: 'transform 0.3s ease',
+                '&:hover': {
+                  transform: 'rotate(0deg) scale(1.02)'
+                }
               }}
             />
-          </Fade>
-        ))}
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Typography variant="overline" sx={{ color: colors.accent.main, fontWeight: 700, letterSpacing: 1.5 }}>
+              RELAX & REJUVENATE
+            </Typography>
+            <Typography variant="h3" sx={{ fontWeight: 800, mb: 3, color: colors.primary.main }}>
+              Designed for Comfort
+            </Typography>
+            <Typography variant="body1" paragraph sx={{ color: colors.text.secondary, fontSize: '1.1rem', lineHeight: 1.8 }}>
+              A well-designed bathroom adds immense value to your home and your daily life. Whether you need a simple update or a complete overhaul, we handle everything from plumbing to the finishing touches.
+            </Typography>
+
+            <Box sx={{ mt: 4 }}>
+              <Button
+                component={Link}
+                to="/contact"
+                variant="contained"
+                size="large"
+                endIcon={<ArrowForwardIcon />}
+                sx={{
+                  backgroundColor: colors.accent.main,
+                  '&:hover': { backgroundColor: colors.accent.dark },
+                  borderRadius: '30px',
+                  px: 4
+                }}
+              >
+                Start Your Project
+              </Button>
+            </Box>
+          </Grid>
+        </Grid>
+      </Container>
+
+      {/* ============ FEATURES SECTION ============ */}
+      <Box sx={{ bgcolor: '#f8f9fa', py: 10 }}>
+        <Container maxWidth="lg">
+          <Typography variant="h3" align="center" sx={{ fontWeight: 800, mb: 8, color: colors.primary.main }}>
+            Our Bathroom Services
+          </Typography>
+          <Grid container spacing={4}>
+            {features.map((feature, index) => (
+              <Grid item xs={12} md={4} key={index}>
+                <Card
+                  elevation={0}
+                  sx={{
+                    height: '100%',
+                    bgcolor: 'transparent',
+                    transition: 'transform 0.3s ease',
+                    '&:hover': { transform: 'translateY(-10px)' }
+                  }}
+                >
+                  <CardContent sx={{ textAlign: 'center' }}>
+                    <Box
+                      sx={{
+                        width: 80,
+                        height: 80,
+                        bgcolor: 'white',
+                        borderRadius: '50%',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        mx: 'auto',
+                        mb: 3,
+                        boxShadow: '0 10px 30px rgba(0,0,0,0.05)'
+                      }}
+                    >
+                      {feature.icon}
+                    </Box>
+                    <Typography variant="h5" sx={{ fontWeight: 700, mb: 2 }}>{feature.title}</Typography>
+                    <Typography variant="body1" sx={{ color: colors.text.secondary }}>{feature.description}</Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
       </Box>
 
-      {/* Elevated Text Section */}
-      <Box sx={{
-        marginTop: '30px',
-        textAlign: 'center',
-        backgroundColor: '#fff',
-        borderRadius: '12px',
-        boxShadow: '0 6px 12px rgba(0, 0, 0, 0.15)',
-        padding: { xs: '20px', md: '100px' },
-        paddingTop: '100px',
-        maxWidth: '900px',
-        margin: '0 auto',
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '20px',
-        background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(240, 240, 240, 0.8))',
-        border: '1px solid #ddd',
-      }}>
-        <Typography variant="h4" sx={{
-          fontWeight: 'bold', fontSize: { xs: '28px', md: '36px' }, color: '#333', marginBottom: '20px', fontFamily: "'Roboto', sans-serif"
-        }}>
-          Redefine Luxury in Your Bathroom
+      {/* ============ GALLERY PREVIEW ============ */}
+      <Container maxWidth="lg" sx={{ py: 10 }}>
+        <Typography variant="h3" align="center" sx={{ fontWeight: 800, mb: 6, color: colors.primary.main }}>
+          Recent Projects
         </Typography>
+        <Grid container spacing={2}>
+          {galleryImages.map((img, index) => (
+            <Grid item xs={12} sm={6} md={3} key={index}>
+              <Box
+                sx={{
+                  height: '300px',
+                  borderRadius: '12px',
+                  overflow: 'hidden',
+                  boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
+                  '&:hover img': {
+                    transform: 'scale(1.1)'
+                  }
+                }}
+              >
+                <Box
+                  component="img"
+                  src={img}
+                  alt={`Bathroom Gallery ${index}`}
+                  sx={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    transition: 'transform 0.5s ease'
+                  }}
+                />
+              </Box>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
 
-        <Typography variant="body1" sx={{
-          color: '#666', fontSize: { xs: '14px', md: '16px' }, lineHeight: 1.7, fontFamily: "'Georgia', serif", fontStyle: 'italic'
-        }}>
-          At Auggie's Home Remodeling, we believe that your bathroom should be more than just functional – it should be a personal retreat. Our team specializes in creating stunning bathroom spaces that combine elegance, comfort, and practicality to redefine your everyday routine.
-        </Typography>
-
-        <Typography variant="body1" sx={{
-          color: '#444', fontSize: { xs: '16px', md: '18px' }, fontWeight: 'bold', marginTop: '10px'
-        }}>
-          <strong>Seamless Bathroom Transformations</strong>
-        </Typography>
-
-        <Typography variant="body1" sx={{
-          color: '#666', fontSize: { xs: '14px', md: '16px' }, lineHeight: 1.7
-        }}>
-          We simplify the renovation process, offering tailored solutions that turn your vision into reality. From modern spa-like designs to timeless classics, we deliver perfection at every step.
-        </Typography>
-
-        <Typography variant="body1" sx={{
-          color: '#666', fontSize: { xs: '14px', md: '16px' }, lineHeight: 1.7
-        }}>
-          Here's why homeowners trust us with their bathroom renovations:
-        </Typography>
-
-        <Box sx={{ marginBottom: '20px', display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
-            <CheckCircle sx={{ color: '#4CAF50', transform: 'translateY(-2px)' }} />
-            <Typography variant="body1" sx={{ color: '#666', fontSize: { xs: '14px', md: '16px' } }}>
-              <strong>Elegant Design</strong>: We create custom designs that reflect your personal style, blending aesthetics with functionality.
-            </Typography>
-          </Box>
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
-            <CheckCircle sx={{ color: '#4CAF50', transform: 'translateY(-9px)' }} />
-            <Typography variant="body1" sx={{ color: '#666', fontSize: { xs: '14px', md: '16px' } }}>
-              <strong>Premium Materials</strong>: From luxurious tiles to state-of-the-art fixtures, we use only the best to ensure lasting beauty and durability.
-            </Typography>
-          </Box>
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
-            <CheckCircle sx={{ color: '#4CAF50', transform: 'translateY(-9px)' }} />
-            <Typography variant="body1" sx={{ color: '#666', fontSize: { xs: '14px', md: '16px' } }}>
-              <strong>Flawless Execution</strong>: Our skilled team ensures that every detail is executed to perfection, giving you a bathroom that exceeds your expectations.
-            </Typography>
-          </Box>
-        </Box>
-
-        <Typography variant="body1" sx={{
-          color: '#666', fontSize: { xs: '14px', md: '16px' }, lineHeight: 1.7
-        }}>
-          At Auggie's Home Remodeling, we transform bathrooms into spaces that inspire relaxation and enhance your everyday life. Let us bring your dream bathroom to life with expertise, elegance, and care.
-        </Typography>
+      {/* ============ CTA SECTION ============ */}
+      <Box sx={{ bgcolor: colors.primary.main, py: 8, color: 'white', textAlign: 'center' }}>
+        <Container maxWidth="md">
+          <Typography variant="h4" sx={{ fontWeight: 700, mb: 3 }}>
+            Ready to Upgrade Your Bathroom?
+          </Typography>
+          <Button
+            component={Link}
+            to="/contact"
+            variant="contained"
+            size="large"
+            sx={{
+              bgcolor: 'white',
+              color: colors.primary.main,
+              fontWeight: 700,
+              px: 6,
+              py: 1.5,
+              borderRadius: '50px',
+              '&:hover': {
+                bgcolor: '#f0f0f0'
+              }
+            }}
+          >
+            Get A Free Quote
+          </Button>
+        </Container>
       </Box>
+
     </Box>
   );
 };

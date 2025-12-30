@@ -20,15 +20,16 @@ function App() {
       <Routes>
         {/* Home page - no padding, hero fills viewport */}
         <Route path="/" element={<Home />} />
+
         {/* Other pages - with top padding for header */}
         <Route path="/gallery" element={<Box sx={{ paddingTop: '120px' }}><Gallery /></Box>} />
-        <Route path="/about" element={<Box sx={{ paddingTop: '120px' }}><About /></Box>} />
-        <Route path="/contact" element={<Box sx={{ paddingTop: '120px' }}><Contact /></Box>} />
-        <Route path="/services/kitchen" element={<Box sx={{ paddingTop: '120px' }}><KitchenRemodeling /></Box>} />
-        <Route path="/services/bathroom" element={<Box sx={{ paddingTop: '120px' }}><BathroomRenovations /></Box>} />
-        <Route path="/services/basement" element={<Box sx={{ paddingTop: '120px' }}><BasementRenovations /></Box>} />
-        <Route path="/services/flooring" element={<Box sx={{ paddingTop: '120px' }}><Flooring /></Box>} />
-        <Route path="/services/painting" element={<Box sx={{ paddingTop: '120px' }}><Painting /></Box>} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/services/kitchen" element={<KitchenRemodeling />} />
+        <Route path="/services/bathroom" element={<BathroomRenovations />} />
+        <Route path="/services/basement" element={<BasementRenovations />} />
+        <Route path="/services/flooring" element={<Flooring />} />
+        <Route path="/services/painting" element={<Painting />} />
       </Routes>
       <Footer />
     </Router>

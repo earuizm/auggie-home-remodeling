@@ -1,120 +1,258 @@
-import React, { useState, useEffect } from 'react';
-import { Box, Typography, Fade } from '@mui/material';
-import { CheckCircle } from '@mui/icons-material'; // Check icon for features
+import React, { useEffect } from 'react';
+import { Box, Typography, Container, Grid, Card, CardContent, Button } from '@mui/material';
+import { Link } from 'react-router-dom';
+import FormatPaintIcon from '@mui/icons-material/FormatPaint';
+import BrushIcon from '@mui/icons-material/Brush';
+import HomeIcon from '@mui/icons-material/Home';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { colors } from '../theme';
 
 const Painting = () => {
-  const images = ['/painting1.jpg'];
-  const [currentImage, setCurrentImage] = useState(0);
-
-  // Function to change image every 3 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImage((prevImage) => (prevImage + 1) % images.length);
-    }, 3000); // 3 seconds for each image
-
-    return () => clearInterval(interval); // Cleanup on unmount
-  }, []);
-
-  // Scroll to top whenever this component is rendered
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  const features = [
+    {
+      title: 'Interior Painting',
+      description: 'Flawless finishes for walls, ceilings, and trim using premium paints.',
+      icon: <FormatPaintIcon sx={{ fontSize: 40, color: colors.accent.main }} />
+    },
+    {
+      title: 'Exterior Painting',
+      description: 'Boost curb appeal and protect your home from the elements.',
+      icon: <HomeIcon sx={{ fontSize: 40, color: colors.accent.main }} />
+    },
+    {
+      title: 'Detail Work',
+      description: 'Cabinet painting, staining, and drywall repair for a complete refresh.',
+      icon: <BrushIcon sx={{ fontSize: 40, color: colors.accent.main }} />
+    }
+  ];
+
+  const galleryImages = [
+    '/painting1.jpg',
+    '/picture1.jpg',
+    '/picture8.jpg', // Nice interior
+    '/picture12.jpg'
+  ];
+
   return (
-    <Box sx={{ width: '100%', padding: '40px 0', backgroundColor: '#f4f4f4' }}>
-      {/* Image Carousel */}
-      <Box sx={{ position: 'relative', width: '100%', height: { xs: '300px', md: '600px' }, overflow: 'hidden' }}>
-        {images.map((image, index) => (
-          <Fade in={currentImage === index} timeout={1000} key={index}>
+    <Box sx={{ width: '100%', minHeight: '100vh', paddingBottom: '80px' }}>
+
+      {/* ============ HERO SECTION ============ */}
+      <Box
+        sx={{
+          position: 'relative',
+          width: '100%',
+          height: '70vh',
+          minHeight: '500px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          backgroundAttachment: 'fixed',
+          backgroundImage: 'url(/painting1.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          '&::before': {
+            content: '""',
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: 'linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.5) 100%)',
+          }
+        }}
+      >
+        <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1, textAlign: 'center' }}>
+          <Typography
+            variant="h1"
+            sx={{
+              color: '#ffffff',
+              fontWeight: 800,
+              fontSize: { xs: '2.5rem', md: '4.5rem' },
+              mb: 2,
+              textShadow: '0 4px 10px rgba(0,0,0,0.3)'
+            }}
+          >
+            Professional Painting
+          </Typography>
+          <Typography
+            variant="h5"
+            sx={{
+              color: 'rgba(255,255,255,0.9)',
+              maxWidth: '800px',
+              mx: 'auto',
+              fontWeight: 400
+            }}
+          >
+            A fresh coat of paint makes all the difference.
+          </Typography>
+        </Container>
+      </Box>
+
+      {/* ============ INTRO SECTION ============ */}
+      <Container maxWidth="lg" sx={{ py: 10 }}>
+        <Grid container spacing={6} alignItems="center">
+          <Grid item xs={12} md={6}>
             <Box
               component="img"
-              src={image}
-              alt={`Painting Project ${index}`}
+              src="/picture1.jpg"
+              alt="Painted Interior"
               sx={{
-                position: 'absolute',
                 width: '100%',
-                height: '100%',
-                objectFit: 'contain', 
-                transition: 'opacity 1s ease-in-out',
+                borderRadius: '20px',
+                boxShadow: '0 20px 40px rgba(0,0,0,0.1)',
+                transform: 'rotate(-2deg)',
+                transition: 'transform 0.3s ease',
+                '&:hover': {
+                  transform: 'rotate(0deg) scale(1.02)'
+                }
               }}
             />
-          </Fade>
-        ))}
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Typography variant="overline" sx={{ color: colors.accent.main, fontWeight: 700, letterSpacing: 1.5 }}>
+              COLOR & FINISH
+            </Typography>
+            <Typography variant="h3" sx={{ fontWeight: 800, mb: 3, color: colors.primary.main }}>
+              Precision in Every Stroke
+            </Typography>
+            <Typography variant="body1" paragraph sx={{ color: colors.text.secondary, fontSize: '1.1rem', lineHeight: 1.8 }}>
+              We understand that painting is more than just applying color; it's about preparation, precision, and using the right materials. Our team ensures crisp lines, smooth finishes, and a clean workspace.
+            </Typography>
+
+            <Box sx={{ mt: 4 }}>
+              <Button
+                component={Link}
+                to="/contact"
+                variant="contained"
+                size="large"
+                endIcon={<ArrowForwardIcon />}
+                sx={{
+                  backgroundColor: colors.accent.main,
+                  '&:hover': { backgroundColor: colors.accent.dark },
+                  borderRadius: '30px',
+                  px: 4
+                }}
+              >
+                Start Transfomation
+              </Button>
+            </Box>
+          </Grid>
+        </Grid>
+      </Container>
+
+      {/* ============ FEATURES SECTION ============ */}
+      <Box sx={{ bgcolor: '#f8f9fa', py: 10 }}>
+        <Container maxWidth="lg">
+          <Typography variant="h3" align="center" sx={{ fontWeight: 800, mb: 8, color: colors.primary.main }}>
+            Our Painting Services
+          </Typography>
+          <Grid container spacing={4}>
+            {features.map((feature, index) => (
+              <Grid item xs={12} md={4} key={index}>
+                <Card
+                  elevation={0}
+                  sx={{
+                    height: '100%',
+                    bgcolor: 'transparent',
+                    transition: 'transform 0.3s ease',
+                    '&:hover': { transform: 'translateY(-10px)' }
+                  }}
+                >
+                  <CardContent sx={{ textAlign: 'center' }}>
+                    <Box
+                      sx={{
+                        width: 80,
+                        height: 80,
+                        bgcolor: 'white',
+                        borderRadius: '50%',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        mx: 'auto',
+                        mb: 3,
+                        boxShadow: '0 10px 30px rgba(0,0,0,0.05)'
+                      }}
+                    >
+                      {feature.icon}
+                    </Box>
+                    <Typography variant="h5" sx={{ fontWeight: 700, mb: 2 }}>{feature.title}</Typography>
+                    <Typography variant="body1" sx={{ color: colors.text.secondary }}>{feature.description}</Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
       </Box>
 
-      {/* Elevated Text Section */}
-      <Box sx={{
-        marginTop: '30px',
-        textAlign: 'center',
-        backgroundColor: '#fff',
-        borderRadius: '12px',
-        boxShadow: '0 6px 12px rgba(0, 0, 0, 0.15)',
-        padding: { xs: '20px', md: '100px' },
-        maxWidth: '900px',
-        margin: '0 auto',
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '20px',
-        background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(240, 240, 240, 0.8))',
-        border: '1px solid #ddd',
-      }}>
-        <Typography variant="h4" sx={{
-          fontWeight: 'bold', fontSize: { xs: '28px', md: '36px' }, color: '#333', marginBottom: '20px', fontFamily: "'Roboto', sans-serif"
-        }}>
-          Bring Vibrancy to Your Walls
+      {/* ============ GALLERY PREVIEW ============ */}
+      <Container maxWidth="lg" sx={{ py: 10 }}>
+        <Typography variant="h3" align="center" sx={{ fontWeight: 800, mb: 6, color: colors.primary.main }}>
+          Recent Projects
         </Typography>
+        <Grid container spacing={2}>
+          {galleryImages.map((img, index) => (
+            <Grid item xs={12} sm={6} md={3} key={index}>
+              <Box
+                sx={{
+                  height: '300px',
+                  borderRadius: '12px',
+                  overflow: 'hidden',
+                  boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
+                  '&:hover img': {
+                    transform: 'scale(1.1)'
+                  }
+                }}
+              >
+                <Box
+                  component="img"
+                  src={img}
+                  alt={`Painting ${index}`}
+                  sx={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    transition: 'transform 0.5s ease'
+                  }}
+                />
+              </Box>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
 
-        <Typography variant="body1" sx={{
-          color: '#666', fontSize: { xs: '14px', md: '16px' }, lineHeight: 1.7, fontFamily: "'Georgia', serif", fontStyle: 'italic'
-        }}>
-          At Auggie's Home Remodeling, we understand the power of a fresh coat of paint. Whether it’s a bold accent wall or a full-home refresh, our painting services transform your space into one that feels brand new and uniquely yours.
-        </Typography>
-
-        <Typography variant="body1" sx={{
-          color: '#444', fontSize: { xs: '16px', md: '18px' }, fontWeight: 'bold', marginTop: '10px'
-        }}>
-          <strong>Precision Painting, Every Step of the Way</strong>
-        </Typography>
-
-        <Typography variant="body1" sx={{
-          color: '#666', fontSize: { xs: '14px', md: '16px' }, lineHeight: 1.7
-        }}>
-          Our skilled painters handle every detail, from surface preparation to the final brushstroke. With top-quality paints and expert techniques, we deliver stunning results that last for years to come.
-        </Typography>
-
-        <Typography variant="body1" sx={{
-          color: '#666', fontSize: { xs: '14px', md: '16px' }, lineHeight: 1.7
-        }}>
-          Why choose us for your painting needs? Here's what makes us stand out:
-        </Typography>
-
-        <Box sx={{ marginBottom: '20px', display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
-            <CheckCircle sx={{ color: '#4CAF50', transform: 'translateY(-2px)' }} />
-            <Typography variant="body1" sx={{ color: '#666', fontSize: { xs: '14px', md: '16px' } }}>
-              <strong>High-Quality Materials</strong>: We use premium paints and finishes that enhance your space and ensure long-lasting beauty.
-            </Typography>
-          </Box>
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
-            <CheckCircle sx={{ color: '#4CAF50', transform: 'translateY(-2px)' }} />
-            <Typography variant="body1" sx={{ color: '#666', fontSize: { xs: '14px', md: '16px' } }}>
-              <strong>Attention to Detail</strong>: From perfect edges to smooth coverage, we make sure every inch is flawless.
-            </Typography>
-          </Box>
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
-            <CheckCircle sx={{ color: '#4CAF50', transform: 'translateY(-11px)' }} />
-            <Typography variant="body1" sx={{ color: '#666', fontSize: { xs: '14px', md: '16px' } }}>
-              <strong>Color Expertise</strong>: Need help choosing colors? We guide you through the process to find shades that complement your style.
-            </Typography>
-          </Box>
-        </Box>
-
-        <Typography variant="body1" sx={{
-          color: '#666', fontSize: { xs: '14px', md: '16px' }, lineHeight: 1.7
-        }}>
-          At Auggie's Home Remodeling, our painting services are designed to add vibrancy, elegance, and value to your home. Let us bring your walls to life with our expertise and care.
-        </Typography>
+      {/* ============ CTA SECTION ============ */}
+      <Box sx={{ bgcolor: colors.primary.main, py: 8, color: 'white', textAlign: 'center' }}>
+        <Container maxWidth="md">
+          <Typography variant="h4" sx={{ fontWeight: 700, mb: 3 }}>
+            Ready for a Fresh Look?
+          </Typography>
+          <Button
+            component={Link}
+            to="/contact"
+            variant="contained"
+            size="large"
+            sx={{
+              bgcolor: 'white',
+              color: colors.primary.main,
+              fontWeight: 700,
+              px: 6,
+              py: 1.5,
+              borderRadius: '50px',
+              '&:hover': {
+                bgcolor: '#f0f0f0'
+              }
+            }}
+          >
+            Get A Free Quote
+          </Button>
+        </Container>
       </Box>
+
     </Box>
   );
 };
