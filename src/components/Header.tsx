@@ -101,7 +101,7 @@ const Header = () => {
             ? '0 4px 30px rgba(0, 0, 0, 0.1)'
             : 'none',
           zIndex: 2000,
-          height: '100px',
+          height: { xs: '80px', md: '100px' },
           display: 'flex',
           justifyContent: 'center',
           transition: 'all 0.4s ease',
@@ -113,6 +113,7 @@ const Header = () => {
           width: '100%',
           margin: '0 auto',
           padding: { xs: '0 16px', md: '0 32px' },
+          boxSizing: 'border-box',
         }}>
           {/* Logo */}
           <Box
@@ -128,13 +129,15 @@ const Header = () => {
               },
             }}
           >
-            <img
+            <Box
+              component="img"
               src="/auggie-logo-nbg.webp"
               alt="Auggie's Home Remodeling"
-              style={{
-                height: '120px',
+              sx={{
+                height: { xs: '60px', md: '120px' },
                 objectFit: 'contain',
                 filter: scrolled ? 'none' : 'brightness(1.1)',
+                transition: 'all 0.4s ease',
               }}
             />
           </Box>
@@ -145,12 +148,26 @@ const Header = () => {
               onClick={toggleMobileMenu}
               sx={{
                 color: scrolled ? colors.primary.main : '#ffffff',
-                backgroundColor: scrolled ? 'transparent' : 'rgba(255,255,255,0.1)',
+                backgroundColor: scrolled ? 'rgba(0,0,0,0.05)' : 'rgba(255,255,255,0.15)',
+                padding: '10px 16px',
+                borderRadius: '50px',
+                border: `1px solid ${scrolled ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.2)'}`,
+                gap: 1,
                 '&:hover': {
-                  backgroundColor: scrolled ? 'rgba(0,0,0,0.05)' : 'rgba(255,255,255,0.2)',
+                  backgroundColor: scrolled ? 'rgba(0,0,0,0.08)' : 'rgba(255,255,255,0.25)',
                 },
               }}
             >
+              <Typography
+                variant="button"
+                sx={{
+                  fontWeight: 700,
+                  fontSize: '0.8rem',
+                  display: { xs: 'none', sm: 'block' }
+                }}
+              >
+                {menuOpen ? 'Close' : 'Menu'}
+              </Typography>
               {menuOpen ? <CloseIcon /> : <MenuIcon />}
             </IconButton>
           ) : (
@@ -303,7 +320,7 @@ const Header = () => {
         <Box
           sx={{
             position: 'fixed',
-            top: '100px',
+            top: { xs: '80px', md: '100px' },
             left: 0,
             right: 0,
             bottom: 0,
@@ -336,8 +353,7 @@ const Header = () => {
                 justifyContent: 'flex-start',
                 padding: '16px 20px',
                 borderRadius: '12px',
-                animation: `fadeInUp 0.4s ease ${index * 0.05}s forwards`,
-                opacity: 0,
+                animation: `fadeInUp 0.4s ease ${index * 0.05}s both`,
                 '&:hover': {
                   backgroundColor: colors.accent.main + '15',
                 },
