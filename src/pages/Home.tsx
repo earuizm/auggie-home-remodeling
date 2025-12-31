@@ -149,15 +149,24 @@ const Home = () => {
               gap: 1,
               background: 'rgba(255,255,255,0.1)',
               backdropFilter: 'blur(10px)',
-              padding: '10px 24px',
+              padding: { xs: '8px 16px', sm: '10px 24px' },
               borderRadius: '50px',
               border: '1px solid rgba(255,255,255,0.2)',
               mb: 4,
               animation: 'fadeInDown 0.8s ease forwards',
+              maxWidth: '90vw',
+              boxSizing: 'border-box',
             }}
           >
-            <StarIcon sx={{ color: colors.accent.main, fontSize: 20 }} />
-            <Typography sx={{ color: '#fff', fontWeight: 500, fontSize: '0.9rem' }}>
+            <StarIcon sx={{ color: colors.accent.main, fontSize: { xs: 16, sm: 20 } }} />
+            <Typography sx={{
+              color: '#fff',
+              fontWeight: 500,
+              fontSize: { xs: '0.75rem', sm: '0.9rem' },
+              whiteSpace: 'nowrap',
+              overflow: 'hidden',
+              textOverflow: 'ellipsis'
+            }}>
               Trusted by 1000+ Chicago Families
             </Typography>
           </Box>
@@ -291,11 +300,11 @@ const Home = () => {
             ))}
           </Box>
         </Container>
-      </Box>
+      </Box >
 
 
       {/* ============ STATS SECTION ============ */}
-      <Box
+      < Box
         sx={{
           background: `linear-gradient(135deg, ${colors.primary.main} 0%, ${colors.primary.light} 100%)`,
           py: 6,
@@ -340,10 +349,10 @@ const Home = () => {
             ))}
           </Grid>
         </Container>
-      </Box>
+      </Box >
 
       {/* ============ SERVICES SECTION ============ */}
-      <Box sx={{ py: { xs: 8, md: 12 }, backgroundColor: '#fafafa' }}>
+      < Box sx={{ py: { xs: 8, md: 12 }, backgroundColor: '#fafafa' }}>
         <Container maxWidth="lg">
           {/* Section Header */}
           <Box sx={{ textAlign: 'center', mb: 8 }}>
@@ -478,10 +487,10 @@ const Home = () => {
             ))}
           </Grid>
         </Container>
-      </Box>
+      </Box >
 
       {/* ============ ABOUT PREVIEW SECTION ============ */}
-      <Box sx={{ py: { xs: 8, md: 12 }, backgroundColor: '#fff' }}>
+      < Box sx={{ py: { xs: 8, md: 12 }, backgroundColor: '#fff' }}>
         <Container maxWidth="lg">
           <Grid container spacing={6} alignItems="center">
             {/* Image Side */}
@@ -626,10 +635,10 @@ const Home = () => {
             </Grid>
           </Grid>
         </Container>
-      </Box>
+      </Box >
 
       {/* ============ AREAS WE SERVE ============ */}
-      <Box
+      < Box
         sx={{
           py: { xs: 8, md: 10 },
           background: `linear-gradient(135deg, ${colors.primary.main} 0%, ${colors.primary.light} 100%)`,
@@ -708,10 +717,10 @@ const Home = () => {
             </Grid>
           </Grid>
         </Container>
-      </Box>
+      </Box >
 
       {/* ============ CTA SECTION ============ */}
-      <Box
+      < Box
         sx={{
           py: { xs: 10, md: 14 },
           textAlign: 'center',
@@ -721,7 +730,7 @@ const Home = () => {
         }}
       >
         {/* Decorative Pattern */}
-        <Box
+        < Box
           sx={{
             position: 'absolute',
             top: 0,
@@ -733,7 +742,7 @@ const Home = () => {
           }}
         />
 
-        <Container maxWidth="md" sx={{ position: 'relative', zIndex: 1 }}>
+        < Container maxWidth="md" sx={{ position: 'relative', zIndex: 1 }}>
           <Typography
             variant="h2"
             sx={{
@@ -803,9 +812,9 @@ const Home = () => {
               Call (847) 302-7344
             </Button>
           </Box>
-        </Container>
-      </Box>
-    </Box>
+        </Container >
+      </Box >
+    </Box >
   );
 };
 
